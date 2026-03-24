@@ -9,12 +9,13 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --radius-md: var(--radius);
+  --font-sans: var(--font-murecho), sans-serif;
 }
 
 :root {
   --background: #ffffff;
   --foreground: #111827;
-  --primary: #2563eb;
+  --primary: #1882ff;
   --primary-foreground: #ffffff;
   --radius: 0.625rem;
 }
@@ -22,17 +23,18 @@
 .dark {
   --background: #111827;
   --foreground: #f9fafb;
-  --primary: #3b82f6;
+  --primary: #1882ff;
   --primary-foreground: #ffffff;
   --radius: 0.625rem;
+}
+
+.container {
+  @apply max-w-[1120px] mx-auto px-6;
 }
 
 @layer base {
   * {
     @apply outline-none;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
   html {
     @apply font-sans;
