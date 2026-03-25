@@ -14,7 +14,11 @@ export type TripType = "one-way" | "round-trip" | "multi-city";
 
 export type FareType = "regular" | "student" | "umrah";
 
-export type CabinClass = "economy" | "business" | "first";
+export type CabinClass =
+  | "Economy"
+  | "Premium Economy"
+  | "Business"
+  | "First Class";
 
 export interface Airport {
   code: string;
@@ -22,7 +26,6 @@ export interface Airport {
   country: string;
   fullName: string;
 }
-
 export interface FlightLeg {
   id: string;
   origin: Airport;
@@ -34,4 +37,11 @@ export interface ServiceTab {
   value: ServiceType;
   label: string;
   icon: string;
+}
+
+export interface TravellerCounts {
+  adults: number;
+  children: number;
+  kids: number;
+  infants: number;
 }

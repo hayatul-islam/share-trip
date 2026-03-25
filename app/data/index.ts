@@ -1,6 +1,6 @@
 import type { Airport, ServiceTab } from "@app/types";
-import { Hotel, Plane } from "lucide-react";
-import { FlightLeg, TripType } from "../types";
+import { Baby, Hotel, PersonStanding, Plane, User, Users } from "lucide-react";
+import { CabinClass, FlightLeg, TripType } from "../types";
 
 export const NAV_LINKS = [
   {
@@ -134,4 +134,38 @@ export const TRIP_TABS: { value: TripType; label: string }[] = [
   { value: "one-way", label: "One Way" },
   { value: "round-trip", label: "Round Trip" },
   { value: "multi-city", label: "Multi City" },
+];
+
+export const CABIN_CLASSES: CabinClass[] = [
+  "Economy",
+  "Premium Economy",
+  "Business",
+  "First Class",
+];
+
+export const TRAVELLER_CONFIG = [
+  {
+    key: "adults" as const,
+    label: "Adults",
+    sub: "12 years & above",
+    icon: User,
+  },
+  {
+    key: "children" as const,
+    label: "Children",
+    sub: "From 5 to under 12",
+    icon: Users,
+  },
+  {
+    key: "kids" as const,
+    label: "Kids",
+    sub: "From 2 to under 5",
+    icon: PersonStanding,
+  },
+  {
+    key: "infants" as const,
+    label: "Infants",
+    sub: "Under 2 years",
+    icon: Baby,
+  },
 ];

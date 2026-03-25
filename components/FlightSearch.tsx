@@ -1,12 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeftRight, Plus, Search, X } from "lucide-react";
 import React, { useState } from "react";
@@ -15,6 +8,7 @@ import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
 import type { CabinClass, FareType, FlightLeg, TripType } from "@/app/types";
 import AirportSelector from "./AirportSelector";
 import DatePicker from "./DatePicker";
+import TravellerSelectors from "./TravellerSelectors";
 
 const FlightSearch: React.FC = () => {
   const [tripType, setTripType] = useState<TripType>("one-way");
@@ -60,14 +54,14 @@ const FlightSearch: React.FC = () => {
   };
 
   return (
-    <div className="px-6 py-4 space-y-5">
+    <div className="px-6 py-4 space-y-5 ">
       <div className="flex items-center justify-between">
         <Tabs
           value={tripType}
           onValueChange={(v) => setTripType(v as TripType)}
           className="w-fit"
         >
-          <TabsList className="p-1 rounded-lg h-10 flex items-center gap-1">
+          <TabsList className="p-1 rounded-lg h-10 flex items-center gap-1.5">
             {TRIP_TABS.map((tab) => {
               const isActive = tripType === tab.value;
               return (
@@ -108,40 +102,7 @@ const FlightSearch: React.FC = () => {
           </TabsList>
         </Tabs>
 
-        <div className="flex items-center gap-2">
-          <Select value={travellers} onValueChange={setTravellers}>
-            <SelectTrigger className="h-9 text-[13px] border-gray-200 rounded-lg min-w-[148px] gap-1 focus:ring-1 focus:ring-[#f97316] focus:border-[#f97316]">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {["1", "2", "3", "4", "5", "6"].map((n) => (
-                <SelectItem key={n} value={n} className="text-[13px]">
-                  {n} Traveller{Number(n) > 1 ? "s" : ""}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-
-          <Select
-            value={cabinClass}
-            onValueChange={(v) => setCabinClass(v as CabinClass)}
-          >
-            <SelectTrigger className="h-9 text-[13px] border-gray-200 rounded-lg min-w-[110px] focus:ring-1 focus:ring-[#f97316] focus:border-[#f97316]">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="economy" className="text-[13px]">
-                Economy
-              </SelectItem>
-              <SelectItem value="business" className="text-[13px]">
-                Business
-              </SelectItem>
-              <SelectItem value="first" className="text-[13px]">
-                First Class
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        <TravellerSelectors />
       </div>
 
       <div className="space-y-3">
@@ -199,43 +160,18 @@ const FlightSearch: React.FC = () => {
           <button
             type="button"
             onClick={addLeg}
-            className="flex items-center gap-1.5 text-[13px] font-semibold text-[#f97316] hover:text-orange-600 transition-colors"
+            className="flex items-center gap-1.5 text-[13px] font-semibold text-primary transition-colors"
           >
             <Plus className="w-4 h-4" />
             Add More Flight
           </button>
 
           <div className="w-px h-4 bg-gray-200" />
-
-          <div className="flex items-center gap-2">
-            <span className="text-[12px] text-gray-400 font-medium whitespace-nowrap">
-              Fare Type
-            </span>
-            <Select
-              value={fareType}
-              onValueChange={(v) => setFareType(v as FareType)}
-            >
-              <SelectTrigger className="h-8 text-[13px] border-gray-200 rounded-lg w-[148px] focus:ring-1 focus:ring-[#f97316] focus:border-[#f97316]">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="regular" className="text-[13px]">
-                  Regular Fare
-                </SelectItem>
-                <SelectItem value="student" className="text-[13px]">
-                  Student Fare
-                </SelectItem>
-                <SelectItem value="umrah" className="text-[13px]">
-                  Umrah Fare
-                </SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
         </div>
 
         <Button
           type="button"
-          className="bg-[#f97316] hover:bg-orange-600 text-white rounded-xl px-8 h-11 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
+          className="bg-yellow hover:bg-yellow/80 text-white rounded-xl px-8 h-11 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
         >
           <Search className="w-4 h-4" />
           Search
