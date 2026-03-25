@@ -6,13 +6,16 @@ import React, { useState } from "react";
 
 import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
 import type { FlightLeg, TripType } from "@/app/types";
+
 import AirportSelector from "./AirportSelector";
 import DatePicker from "./DatePicker";
+import DateRangePicker, { DateRange } from "./DateRangePicker";
 import TravellerSelectors from "./TravellerSelectors";
 
 const FlightSearch: React.FC = () => {
   const [tripType, setTripType] = useState<TripType>("one-way");
   const [legs, setLegs] = useState<FlightLeg[]>(INITIAL_LEGS);
+  const [range, setRange] = useState<DateRange>({ from: new Date(), to: null });
 
   const updateLeg = (id: string, updates: Partial<FlightLeg>): void => {
     setLegs((prev) =>
@@ -49,6 +52,8 @@ const FlightSearch: React.FC = () => {
       },
     ]);
   };
+
+  const legData: FlightLeg[] = tripType === "multi-city" ? legs : [legs[0]];
 
   return (
     <div className="px-6 py-4 space-y-5 ">
@@ -103,12 +108,13 @@ const FlightSearch: React.FC = () => {
       </div>
 
       <div className=" space-y-3">
-        {legs.map((leg) => (
-          <div key={leg.id} className="flex items-stretch gap-2 w-full">
+        {legData.map((leg) => (
+          <div key={leg.id} className="flex items-stretch gap-2 ">
             <div className="flex items-center w-full">
               <AirportSelector
                 airport={leg.origin}
                 onChange={(ap) => updateLeg(leg.id, { origin: ap })}
+                className={`${tripType === "round-trip" && "!w-[280px]"}`}
               />
 
               <div className="flex items-center justify-center bg-white -mx-3 z-50 border-x-2 rounded-full h-10 w-10 border-gray-200">
@@ -126,15 +132,41 @@ const FlightSearch: React.FC = () => {
               <AirportSelector
                 airport={leg.destination}
                 onChange={(ap) => updateLeg(leg.id, { destination: ap })}
+                className={`${tripType === "round-trip" && "!w-[280px]"}`}
               />
             </div>
 
-            <DatePicker
-              date={leg.date}
-              onChange={(d) => updateLeg(leg.id, { date: d })}
-            />
+            <div
+              className={`${
+                tripType === "round-trip"
+                  ? "flex max-w-[550px] gap-2"
+                  : "max-w-[300px]"
+              } w-full`}
+            >
+              {tripType === "round-trip" ? (
+                <div className="w-1/2 pr-1">
+                  <DateRangePicker range={range} onChange={setRange} />
+                </div>
+              ) : (
+                <div className="w-full">
+                  <DatePicker
+                    date={leg.date}
+                    onChange={(d) => updateLeg(leg.id, { date: d })}
+                  />
+                </div>
+              )}
+            </div>
 
-            {legs.length > 1 && (
+            {tripType !== "multi-city" && (
+              <Button
+                type="button"
+                className="bg-yellow hover:bg-yellow/80 text-white rounded-xl h-[62px] w-[62px]"
+              >
+                <Search className="!h-6 !w-6" />
+              </Button>
+            )}
+
+            {legs.length > 1 && tripType === "multi-city" && (
               <div className="flex items-center pr-3 shrink-0">
                 <button
                   type="button"
@@ -151,28 +183,30 @@ const FlightSearch: React.FC = () => {
         ))}
       </div>
 
-      <div className="flex items-center justify-between flex-wrap gap-3">
-        <div className="flex items-center gap-4">
-          <button
+      {tripType === "multi-city" && (
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              onClick={addLeg}
+              className="flex items-center gap-1.5 font-medium text-primary transition-colors cursor-pointer"
+            >
+              <Plus className="w-5 h-5" />
+              Add More Flight
+            </button>
+
+            <div className="w-px h-4 bg-gray-200" />
+          </div>
+
+          <Button
             type="button"
-            onClick={addLeg}
-            className="flex items-center gap-1.5 font-medium text-primary transition-colors cursor-pointer"
+            className="bg-yellow hover:bg-yellow/80 text-white rounded-xl px-6 h-12 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
           >
-            <Plus className="w-5 h-5" />
-            Add More Flight
-          </button>
-
-          <div className="w-px h-4 bg-gray-200" />
+            <Search className="w-4 h-4" />
+            Search
+          </Button>
         </div>
-
-        <Button
-          type="button"
-          className="bg-yellow hover:bg-yellow/80 text-white rounded-xl px-6 h-12 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
-        >
-          <Search className="w-4 h-4" />
-          Search
-        </Button>
-      </div>
+      )}
     </div>
   );
 };

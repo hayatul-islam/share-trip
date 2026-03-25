@@ -21,7 +21,7 @@ const DatePicker: React.FC<DatePickerProps> = ({ date, onChange }) => {
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="w-full max-w-[320px] shrink-0 text-left px-4 py-3 rounded-lg border border-gray-200 transition-colors focus:outline-none"
+          className="w-full shrink-0 text-left px-4 py-3 rounded-lg border border-gray-200 transition-colors focus:outline-none"
         >
           <div className="flex items-center gap-2.5">
             <h4 className="text-lg font-medium text-gray-800 leading-none tabular-nums">

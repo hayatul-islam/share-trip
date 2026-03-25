@@ -14,11 +14,13 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 interface AirportSelectorProps {
   airport: Airport;
   onChange: (airport: Airport) => void;
+  className?: string;
 }
 
 const AirportSelector: React.FC<AirportSelectorProps> = ({
   airport,
   onChange,
+  className,
 }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [query, setQuery] = useState<string>("");
@@ -72,9 +74,9 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <div className="flex-1 cursor-pointer w-full">
+        <div className={`${className} w-full flex-1 cursor-pointer`}>
           {open ? (
-            <div className="flex items-center gap-2 px-3 h-[62px] border border-primary rounded-lg bg-white">
+            <div className="flex items-center gap-2 px-3 h-[62px] border border-primary rounded-lg bg-white w-full">
               <Input
                 ref={inputRef}
                 value={query ? query : defaultSelectAirport}
@@ -104,11 +106,11 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                 {airport.code}
               </h4>
               <div className="w-px border-l border-gray-300 h-7 shrink-0" />
-              <div className="min-w-0">
+              <div>
                 <p className="text-[15px] font-medium text-gray-800 leading-snug truncate">
                   {airport.city}
                 </p>
-                <p className="text-[11px] text-gray-500 truncate mt-0.5">
+                <p className="text-[11px] text-gray-500 mt-0.5 truncate w-full">
                   {airport.country}, {airport.fullName}
                 </p>
               </div>
@@ -123,16 +125,16 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
         sideOffset={4}
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
-        <ul className="max-h-[280px] overflow-y-auto py-1.5">
+        <ul className="max-h-[280px] overflow-y-auto py-1.5 w-full min-w-[300px]">
           {filtered.length === 0 ? (
-            <li className="py-8 text-center">
+            <div className="grid py-8 text-center">
               <p className="text-sm text-gray-400 font-medium">
                 No airports found
               </p>
               <p className="text-[11px] text-gray-300 mt-1">
                 Try a city name or IATA code
               </p>
-            </li>
+            </div>
           ) : (
             filtered.map((ap) => {
               const isSelected = ap.code === airport.code;
