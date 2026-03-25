@@ -5,16 +5,13 @@ import { ArrowLeftRight, Plus, Search, X } from "lucide-react";
 import React, { useState } from "react";
 
 import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
-import type { CabinClass, FareType, FlightLeg, TripType } from "@/app/types";
+import type { FlightLeg, TripType } from "@/app/types";
 import AirportSelector from "./AirportSelector";
 import DatePicker from "./DatePicker";
 import TravellerSelectors from "./TravellerSelectors";
 
 const FlightSearch: React.FC = () => {
   const [tripType, setTripType] = useState<TripType>("one-way");
-  const [fareType, setFareType] = useState<FareType>("regular");
-  const [travellers, setTravellers] = useState<string>("1");
-  const [cabinClass, setCabinClass] = useState<CabinClass>("economy");
   const [legs, setLegs] = useState<FlightLeg[]>(INITIAL_LEGS);
 
   const updateLeg = (id: string, updates: Partial<FlightLeg>): void => {
