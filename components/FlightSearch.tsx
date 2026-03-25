@@ -5,11 +5,11 @@ import { ArrowLeftRight, Plus, Search, X } from "lucide-react";
 import React, { useState } from "react";
 
 import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
-import type { FlightLeg, TripType } from "@/app/types";
+import type { DateRange, FlightLeg, TripType } from "@/app/types";
 
 import AirportSelector from "./AirportSelector";
 import DatePicker from "./DatePicker";
-import DateRangePicker, { DateRange } from "./DateRangePicker";
+import DateRangePicker from "./DateRangePicker";
 import TravellerSelectors from "./TravellerSelectors";
 
 const FlightSearch: React.FC = () => {

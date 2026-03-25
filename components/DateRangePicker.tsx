@@ -1,5 +1,7 @@
 "use client";
 
+import { DAYS, MONTHS } from "@/app/data";
+import { CalendarDate, DateRange } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {
   Popover,
@@ -10,17 +12,6 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-
-type CalendarDate = {
-  year: number;
-  month: number;
-  day: number;
-};
-
-export type DateRange = {
-  from: Date | null;
-  to: Date | null;
-};
 
 interface DateRangePickerProps {
   range?: DateRange;
@@ -52,23 +43,6 @@ function isBeforeToday(date: CalendarDate): boolean {
   today.setHours(0, 0, 0, 0);
   return toDate(date) < today;
 }
-
-const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-const DAYS = ["S", "M", "T", "W", "T", "F", "S"];
 
 function getDaysInMonth(year: number, month: number): number {
   return new Date(year, month + 1, 0).getDate();

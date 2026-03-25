@@ -47,3 +47,14 @@ export interface TravellerCounts {
   kids: number;
   infants: number;
 }
+
+export type CalendarDate = {
+  year: number;
+  month: number;
+  day: number;
+};
+
+export type DateRange = {
+  from: Date | null;
+  to: Date | null;
+};
