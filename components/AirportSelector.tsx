@@ -72,7 +72,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <div className="flex-1 cursor-pointer ">
+        <div className="flex-1 cursor-pointer w-full">
           {open ? (
             <div className="flex items-center gap-2 px-3 h-[62px] border border-primary rounded-lg bg-white">
               <Input
@@ -108,7 +108,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                 <p className="text-[15px] font-medium text-gray-800 leading-snug truncate">
                   {airport.city}
                 </p>
-                <p className="text-[11px] text-gray-400 truncate mt-0.5">
+                <p className="text-[11px] text-gray-500 truncate mt-0.5">
                   {airport.country}, {airport.fullName}
                 </p>
               </div>
@@ -118,7 +118,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
       </PopoverTrigger>
 
       <PopoverContent
-        className="w-[360px] p-0 shadow-2xl bg-white border border-gray-200 rounded-xl overflow-hidden"
+        className="w-full p-0 shadow-2xl bg-white border border-gray-200 rounded-xl overflow-hidden"
         align="start"
         sideOffset={4}
         onOpenAutoFocus={(e) => e.preventDefault()}

@@ -21,18 +21,18 @@ const DatePicker: React.FC<DatePickerProps> = ({ date, onChange }) => {
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="w-[195px] shrink-0 text-left px-4 py-3 hover:bg-gray-50 transition-colors focus:outline-none"
+          className="w-full max-w-[320px] shrink-0 text-left px-4 py-3 rounded-lg border border-gray-200 transition-colors focus:outline-none"
         >
-          <div className="flex items-start gap-2.5">
-            <span className="text-[32px] font-bold text-gray-900 leading-none tabular-nums">
+          <div className="flex items-center gap-2.5">
+            <h4 className="text-lg font-medium text-gray-800 leading-none tabular-nums">
               {format(date, "d")}
-            </span>
-
+            </h4>
+            <div className="w-px border-l border-gray-300 h-7 shrink-0" />
             <div>
-              <p className="text-[15px] font-semibold text-gray-900 leading-snug">
+              <p className="text-[15px] font-medium text-gray-800 leading-snug">
                 {format(date, "MMMM")}
               </p>
-              <p className="text-[11px] text-gray-400 mt-0.5">
+              <p className="text-[11px] text-gray-500 mt-0.5">
                 {format(date, "EEEE, yyyy")}
               </p>
             </div>
@@ -41,7 +41,7 @@ const DatePicker: React.FC<DatePickerProps> = ({ date, onChange }) => {
       </PopoverTrigger>
 
       <PopoverContent
-        className="w-auto p-0 shadow-xl border-gray-200"
+        className="w-auto p-0 shadow-xl border-gray-200 bg-white"
         align="end"
       >
         <Calendar

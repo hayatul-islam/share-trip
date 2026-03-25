@@ -105,9 +105,9 @@ const FlightSearch: React.FC = () => {
         <TravellerSelectors />
       </div>
 
-      <div className="space-y-3">
+      <div className=" space-y-3">
         {legs.map((leg) => (
-          <div key={leg.id} className="flex items-stretch ">
+          <div key={leg.id} className="flex items-stretch gap-2 w-full">
             <div className="flex items-center w-full">
               <AirportSelector
                 airport={leg.origin}
@@ -122,7 +122,7 @@ const FlightSearch: React.FC = () => {
                   className="w-7 h-7 rounded-full border border-gray-200 bg-gray-50 flex items-center justify-center
                   hover:bg-orange-50 hover:border-orange-200 transition-colors shadow-sm"
                 >
-                  <ArrowLeftRight className="w-3 h-3 text-gray-800" />
+                  <ArrowLeftRight className="w-3 h-3 text-gray-800 font-medium" />
                 </button>
               </div>
 
@@ -131,7 +131,6 @@ const FlightSearch: React.FC = () => {
                 onChange={(ap) => updateLeg(leg.id, { destination: ap })}
               />
             </div>
-            <div className="w-px bg-gray-100 my-3 shrink-0" />
 
             <DatePicker
               date={leg.date}
@@ -144,7 +143,7 @@ const FlightSearch: React.FC = () => {
                   type="button"
                   onClick={() => removeLeg(leg.id)}
                   aria-label="Remove flight leg"
-                  className="w-7 h-7 rounded-full bg-gray-100 hover:bg-red-50 hover:text-red-400
+                  className="w-6 h-6 rounded-full bg-gray-400 text-white hover:bg-red-50 hover:text-red-400
                     flex items-center justify-center transition-colors"
                 >
                   <X className="w-3.5 h-3.5" />
@@ -160,9 +159,9 @@ const FlightSearch: React.FC = () => {
           <button
             type="button"
             onClick={addLeg}
-            className="flex items-center gap-1.5 text-[13px] font-semibold text-primary transition-colors"
+            className="flex items-center gap-1.5 font-medium text-primary transition-colors cursor-pointer"
           >
-            <Plus className="w-4 h-4" />
+            <Plus className="w-5 h-5" />
             Add More Flight
           </button>
 
@@ -171,7 +170,7 @@ const FlightSearch: React.FC = () => {
 
         <Button
           type="button"
-          className="bg-yellow hover:bg-yellow/80 text-white rounded-xl px-8 h-11 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
+          className="bg-yellow hover:bg-yellow/80 text-white rounded-xl px-6 h-12 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
         >
           <Search className="w-4 h-4" />
           Search
