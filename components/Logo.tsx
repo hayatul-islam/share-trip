@@ -5,7 +5,7 @@ const Logo = () => {
     <Link href="/">
       {" "}
       <svg
-        width="150"
+        width="144"
         viewBox="0 0 568 160"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

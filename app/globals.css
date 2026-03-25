@@ -8,15 +8,17 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-yellow: var(--yellow);
   --radius-md: var(--radius);
   --font-sans: var(--font-murecho), sans-serif;
 }
 
 :root {
-  --background: #ffffff;
+  --background: #f5f7fa;
   --foreground: #111827;
   --primary: #1882ff;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #f5f7fa;
+  --yellow: #d66f00;
   --radius: 0.625rem;
 }
 
@@ -24,12 +26,12 @@
   --background: #111827;
   --foreground: #f9fafb;
   --primary: #1882ff;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #f5f7fa;
   --radius: 0.625rem;
 }
 
 .container {
-  @apply max-w-[1120px] mx-auto px-6;
+  @apply max-w-[1150px] mx-auto px-6;
 }
 
 @layer base {

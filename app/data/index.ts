@@ -1,16 +1,6 @@
-import type { Airport, CabinClass, StatBadge } from "@/types";
-import {
-  Car,
-  FileText,
-  HeartPulse,
-  Hotel,
-  Palmtree,
-  Plane,
-  Receipt,
-  RefreshCcw,
-  ShoppingBag,
-  Smartphone,
-} from "lucide-react";
+import type { Airport, ServiceTab } from "@app/types";
+import { Hotel, Plane } from "lucide-react";
+import { FlightLeg, TripType } from "../types";
 
 export const NAV_LINKS = [
   {
@@ -67,53 +57,81 @@ export const NAV_LINKS = [
   },
 ] as const;
 
-export const BOOKING_TABS = [
-  { label: "Flight", icon: Plane },
-  { label: "Hotel", icon: Hotel },
-  { label: "Shop", icon: ShoppingBag },
-  { label: "Holiday", icon: Palmtree },
-  { label: "Visa", icon: FileText },
-  { label: "Medical", icon: HeartPulse },
-  { label: "Cars", icon: Car, badge: true },
-  { label: "eSIM", icon: Smartphone },
-  { label: "Recharge", icon: RefreshCcw },
-  { label: "Pay Bill", icon: Receipt },
-] as const;
-
-export const AIRPORTS: Record<string, Airport> = {
-  DAC: {
-    name: "Dhaka",
-    sub: "Bangladesh, Hazrat Shahjalal International Airport",
-  },
-  CXB: { name: "Cox's Bazar", sub: "Bangladesh, Cox's Bazar Airport (CXB)" },
-  JFK: {
-    name: "New York",
-    sub: "United States, John F Kennedy International Airport",
-  },
-  CGP: {
-    name: "Chittagong",
-    sub: "Bangladesh, Shah Amanat International Airport",
-  },
-  DXB: {
-    name: "Dubai",
-    sub: "United Arab Emirates, Dubai International Airport",
-  },
-  LHR: { name: "London", sub: "United Kingdom, Heathrow Airport" },
-};
-
-export const CABIN_CLASSES: CabinClass[] = ["Economy", "Business", "First"];
-
-export const FARE_TYPES = [
-  { value: "regular", label: "Regular Fare" },
-  { value: "student", label: "Student Fare" },
-  { value: "umrah", label: "Umrah Fare" },
-] as const;
-
-export const STATS: StatBadge[] = [
-  { label: "Flights Booked", value: "10M+" },
-  { label: "Happy Travellers", value: "2M+" },
-  { label: "Routes Available", value: "500+" },
-  { label: "Airlines Partner", value: "40+" },
+export const SERVICE_TABS: ServiceTab[] = [
+  { value: "flight", label: "Flight", icon: Plane },
+  { value: "hotel", label: "Hotel", icon: Hotel },
+  // { value: "shop", label: "Shop", icon: ShoppingBag },
+  // { value: "holiday", label: "Holiday", icon: Palmtree },
+  // { value: "visa", label: "Visa", icon: CreditCard },
+  // { value: "medical", label: "Medical", icon: Heart },
+  // { value: "cars", label: "Cars", icon: Car },
+  // { value: "esim", label: "eSIM", icon: Wifi },
+  // { value: "recharge", label: "Recharge", icon: Smartphone },
+  // { value: "pay-bill", label: "Pay Bill", icon: Receipt },
 ];
 
-export const TRAVELLER_OPTIONS = [1, 2, 3, 4, 5, 6] as const;
+export const AIRPORTS: Airport[] = [
+  {
+    code: "DAC",
+    city: "Dhaka",
+    country: "Bangladesh",
+    fullName: "Hazrat Shahjalal International Airport",
+  },
+  {
+    code: "CXB",
+    city: "Cox's Bazar",
+    country: "Bangladesh",
+    fullName: "Cox's Bazar Airport (CXB)",
+  },
+  {
+    code: "JFK",
+    city: "New York",
+    country: "United States",
+    fullName: "John F Kennedy International Airport",
+  },
+  {
+    code: "DXB",
+    city: "Dubai",
+    country: "UAE",
+    fullName: "Dubai International Airport",
+  },
+  {
+    code: "LHR",
+    city: "London",
+    country: "United Kingdom",
+    fullName: "Heathrow Airport (LHR)",
+  },
+  {
+    code: "SIN",
+    city: "Singapore",
+    country: "Singapore",
+    fullName: "Changi Airport (SIN)",
+  },
+  {
+    code: "BKK",
+    city: "Bangkok",
+    country: "Thailand",
+    fullName: "Suvarnabhumi Airport (BKK)",
+  },
+];
+
+export const INITIAL_LEGS: FlightLeg[] = [
+  {
+    id: "leg-1",
+    origin: AIRPORTS[0],
+    destination: AIRPORTS[1],
+    date: new Date(2026, 2, 26),
+  },
+  {
+    id: "leg-2",
+    origin: AIRPORTS[1],
+    destination: AIRPORTS[2],
+    date: new Date(2026, 2, 28),
+  },
+];
+
+export const TRIP_TABS: { value: TripType; label: string }[] = [
+  { value: "one-way", label: "One Way" },
+  { value: "round-trip", label: "Round Trip" },
+  { value: "multi-city", label: "Multi City" },
+];

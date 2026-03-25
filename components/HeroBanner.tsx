@@ -2,7 +2,7 @@ export function HeroBanner() {
   return (
     <div className="relative h-52 sm:h-64 md:h-72 overflow-hidden">
       <video
-        src="https://assets.sharetrip.net/hero-bg-cover.mp4"
+        src="assets/videos/hero-bg-cover.mp4"
         autoPlay
         loop
         muted

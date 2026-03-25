@@ -16,12 +16,12 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur ">
-      <div className="container h-16 flex items-center justify-between">
+      <div className="container h-[68px] flex items-center justify-between">
         {/* Logo */}
         <Logo />
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-3">
           {NAV_LINKS.map((item) => {
             return item.type === "dropdown" ? (
               <DropdownMenu key={item.name}>
@@ -60,7 +60,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="#"
-            className="bg-primary text-white rounded-full px-6 py-2 font-medium text-sm pb-2.5"
+            className="bg-primary text-white rounded-full px-6 py-2.5 pb-3 font-medium text-sm"
           >
             Login
           </Link>

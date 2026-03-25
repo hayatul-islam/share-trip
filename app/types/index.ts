@@ -1,24 +1,37 @@
+export type ServiceType =
+  | "flight"
+  | "hotel"
+  | "shop"
+  | "holiday"
+  | "visa"
+  | "medical"
+  | "cars"
+  | "esim"
+  | "recharge"
+  | "pay-bill";
+
 export type TripType = "one-way" | "round-trip" | "multi-city";
+
 export type FareType = "regular" | "student" | "umrah";
-export type CabinClass = "Economy" | "Business" | "First";
+
+export type CabinClass = "economy" | "business" | "first";
+
+export interface Airport {
+  code: string;
+  city: string;
+  country: string;
+  fullName: string;
+}
 
 export interface FlightLeg {
   id: string;
-  from: string;
-  fromCode: string;
-  fromSub: string;
-  to: string;
-  toCode: string;
-  toSub: string;
-  date: Date | undefined;
+  origin: Airport;
+  destination: Airport;
+  date: Date;
 }
 
-export interface Airport {
-  name: string;
-  sub: string;
-}
-
-export interface StatBadge {
+export interface ServiceTab {
+  value: ServiceType;
   label: string;
-  value: string;
+  icon: string;
 }
