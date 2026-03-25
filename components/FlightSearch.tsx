@@ -120,7 +120,7 @@ const FlightSearch: React.FC = () => {
                   onClick={() => swapAirports(leg.id)}
                   aria-label="Swap origin and destination"
                   className="w-7 h-7 rounded-full border border-gray-200 bg-gray-50 flex items-center justify-center
-                  hover:bg-orange-50 hover:border-orange-200 transition-colors shadow-sm"
+                  transition-colors shadow-sm"
                 >
                   <ArrowLeftRight className="w-3 h-3 text-gray-800 font-medium" />
                 </button>

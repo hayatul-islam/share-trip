@@ -1,6 +1,5 @@
-import type { Airport, ServiceTab } from "@app/types";
 import { Baby, Hotel, PersonStanding, Plane, User, Users } from "lucide-react";
-import { CabinClass, FlightLeg, TripType } from "../types";
+import { Airport, CabinClass, FlightLeg, ServiceTab, TripType } from "../types";
 
 export const NAV_LINKS = [
   {
