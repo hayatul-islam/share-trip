@@ -402,3 +402,42 @@ export const AIRLINES = [
     logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/G9.png",
   },
 ];
+
+// MOST POPULAR DESTINATION
+export const POPULAR_DESTINATIONS = [
+  {
+    id: 1,
+    name: "Nepal",
+    hotels: 1240,
+    image:
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&h=700&fit=crop",
+  },
+  {
+    id: 2,
+    name: "Bangkok",
+    hotels: 4351,
+    image:
+      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=500&h=700&fit=crop",
+  },
+  {
+    id: 3,
+    name: "Singapore",
+    hotels: 813,
+    image:
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=500&h=700&fit=crop",
+  },
+  {
+    id: 4,
+    name: "Kuala Lumpur",
+    hotels: 2464,
+    image:
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=500&h=700&fit=crop",
+  },
+  {
+    id: 5,
+    name: "Maafushi",
+    hotels: 36,
+    image:
+      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=500&h=700&fit=crop",
+  },
+];
