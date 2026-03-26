@@ -203,3 +203,58 @@ export const FARE_OPTIONS: FareOption[] = [
 export const INITIAL_ROOMS: RoomConfig[] = [
   { id: 1, adults: 2, children: 0, childAges: [] },
 ];
+
+// OFFERS
+export const OFFER_SLIDES = [
+  {
+    id: 1,
+    image: "assets/images/offers/Student-fare-home-page-thumbnail.png",
+    title: "Bkash Payment Offer",
+    subtitle: "Save on domestic flights with Bkash payment only",
+    tag: "PAYMENT OFFER",
+  },
+  {
+    id: 2,
+    image:
+      "assets/images/offers/1763351470_Mega_Monday_Campaign_home_thumb.png",
+
+    title: "Global Medical Excellence",
+    subtitle: "World-class healthcare at your fingertips",
+    tag: "HEALTH",
+  },
+  {
+    id: 3,
+    image: "assets/images/offers/home-thumbnail.png",
+    title: "Bkash Payment Offer",
+    subtitle: "Save on domestic flights with Bkash payment only",
+    tag: "PAYMENT OFFER",
+  },
+  {
+    id: 4,
+    image:
+      "assets/images/offers/1773049312_EBL_X_ShareTrip_Flight_Campaign__March_2026_home_page.png",
+    title: "Special Student Fare",
+    subtitle: "Enjoy affordable flights with extra baggage allowance",
+    tag: "STUDENT DEAL",
+  },
+  {
+    id: 5,
+    image: "assets/images/offers/B2C_Homepage_Thumbnail.jpg",
+    title: "Explore Nature",
+    subtitle: "Discover hidden trails and breathtaking landscapes",
+    tag: "ADVENTURE",
+  },
+];
+
+export const AD_SLIDES = [
+  {
+    id: 1,
+    image:
+      "assets/images/offers/1760592356_Superbrands Award Post for ST AD Home Page web banner.png",
+  },
+  {
+    id: 2,
+    image:
+      "assets/images/offers/1773943457_Requirement_for_ST_Ad__February_2026_2200_X_280.png",
+  },
+];

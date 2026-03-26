@@ -9,9 +9,7 @@ import { Button } from "../ui/button";
 import GuestsRoomsPicker from "./GuestsRoomsPicker";
 
 const HotelSearch: React.FC = () => {
-  const [airport, setAirport] = useState<Airport | null>(
-    INITIAL_LEGS[0]?.origin,
-  );
+  const [airport, setAirport] = useState<Airport>(INITIAL_LEGS[0]?.origin);
   const [range, setRange] = useState<DateRange>({ from: new Date(), to: null });
 
   return (

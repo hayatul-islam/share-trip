@@ -42,3 +42,60 @@
     @apply font-sans;
   }
 }
+
+/* SLIDER DOT STYLE */
+.offer-slider .slick-dots {
+  position: static;
+  bottom: auto;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+}
+.offer-slider .slick-dots li {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.offer-slider .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 9999px;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.offer-slider .slick-dots li button:before {
+  display: none;
+}
+
+/* Active: filled dot + white gap + outer ring */
+.offer-slider .slick-dots li.slick-active button {
+  background: var(--primary) !important;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 4px var(--primary) !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+/* Ad slider smooth */
+.ad-slider .slick-track {
+  transition-timing-function: cubic-bezier(0.45, 0, 0.55, 1) !important;
+}
+.ad-slider .slick-slide {
+  will-change: transform;
+}
+
+/* Hover overlay transition */
+.group:hover .translate-y-full {
+  transform: translateY(0) !important;
+}
