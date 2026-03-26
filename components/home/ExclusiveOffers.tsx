@@ -2,8 +2,6 @@
 import { AD_SLIDES, OFFER_SLIDES } from "@/app/data";
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 
 const ExclusiveOffers: React.FC = () => {
   const adSliderRef = useRef<Slider>(null);
@@ -35,7 +33,7 @@ const ExclusiveOffers: React.FC = () => {
   };
 
   return (
-    <div className="container pt-12">
+    <div className="container pt-16 pb-20">
       <h2 className="text-[32px] font-bold text-gray-800 mb-4">
         Exclusive Offers
       </h2>
@@ -49,7 +47,7 @@ const ExclusiveOffers: React.FC = () => {
           </Slider>
         </div>
 
-        <div className="relative rounded-xl overflow-hidden h-28 shadow-md mt-16">
+        <div className="relative rounded-xl overflow-hidden h-32 shadow-md mt-16">
           <div className="absolute top-2.5 right-6 z-10 bg-gray-600/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
             AD
           </div>
@@ -57,11 +55,11 @@ const ExclusiveOffers: React.FC = () => {
           <Slider ref={adSliderRef} {...adSettings}>
             {AD_SLIDES.map((slide) => (
               <div key={slide.id}>
-                <div className="relative h-28">
+                <div className="relative h-full">
                   <img
                     src={slide.image}
                     alt="Advertisement"
-                    className="w-full h-28 object-cover"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20" />
                 </div>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Murecho } from "next/font/google";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import "./globals.css";
 
 const murecho = Murecho({
@@ -19,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${murecho.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${murecho.variable} h-full antialiased bg-background`}
+    >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

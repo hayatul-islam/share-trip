@@ -44,18 +44,18 @@
 }
 
 /* SLIDER DOT STYLE */
-.offer-slider .slick-dots {
+.slick-dots {
   position: static;
   bottom: auto;
   display: flex !important;
   justify-content: center;
   align-items: center;
   gap: 6px;
-  margin-top: 12px;
+  margin-top: 32px !important;
   padding: 0;
   list-style: none;
 }
-.offer-slider .slick-dots li {
+.slick-dots li {
   width: 16px;
   height: 16px;
   margin: 0;
@@ -63,7 +63,7 @@
   align-items: center;
   justify-content: center;
 }
-.offer-slider .slick-dots li button {
+.slick-dots li button {
   width: 8px;
   height: 8px;
   padding: 0;
@@ -73,12 +73,12 @@
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.offer-slider .slick-dots li button:before {
+.slick-dots li button:before {
   display: none;
 }
 
 /* Active: filled dot + white gap + outer ring */
-.offer-slider .slick-dots li.slick-active button {
+.slick-dots li.slick-active button {
   background: var(--primary) !important;
   box-shadow:
     0 0 0 2px #fff,

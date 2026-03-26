@@ -258,3 +258,43 @@ export const AD_SLIDES = [
       "assets/images/offers/1773943457_Requirement_for_ST_Ad__February_2026_2200_X_280.png",
   },
 ];
+
+// EXPLORE BANGLADESH
+export const DESTINATIONS = [
+  {
+    id: 1,
+    name: "Chittagong",
+    hotels: 36,
+    image: "/assets/images/explore/8gohsAnVmFQmPRtUKSrdpIMi1SlE16.gif",
+  },
+  {
+    id: 2,
+    name: "Dhaka",
+    hotels: 43,
+    image: "/assets/images/explore/XjOR77hq4zWYqqMRK8yI2uRfemtbgg.png",
+  },
+  {
+    id: 3,
+    name: "Sreemangal",
+    hotels: 6,
+    image: "/assets/images/explore/wcmMawEQourNqilRyE2GOHHv0tYzVP.png",
+  },
+  {
+    id: 4,
+    name: "Gazipur",
+    hotels: 12,
+    image: "/assets/images/explore/TdXdFC08piA8Csi3X8qqreie9UUzif.png",
+  },
+  {
+    id: 5,
+    name: "Cox's Bazar",
+    hotels: 58,
+    image: "/assets/images/explore/Cox's_Bazar.jpg",
+  },
+  {
+    id: 6,
+    name: "Sylhet",
+    hotels: 21,
+    image: "/assets/images/explore/AzOSQlJV2UD8QhKVOKLteYWlrI9brl.png",
+  },
+];
