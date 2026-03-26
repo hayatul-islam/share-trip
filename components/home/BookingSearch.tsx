@@ -3,6 +3,7 @@ import { ServiceType } from "@/app/types";
 import React, { useState } from "react";
 import { Card } from "../ui/card";
 import FlightSearch from "./FlightSearch";
+import HotelSearch from "./HotelSearch";
 import ServiceTabs from "./ServiceTabs";
 
 const BookingSearch: React.FC = () => {
@@ -17,6 +18,7 @@ const BookingSearch: React.FC = () => {
         />
 
         {activeService === "flight" && <FlightSearch />}
+        {activeService === "hotel" && <HotelSearch />}
       </Card>
     </div>
   );

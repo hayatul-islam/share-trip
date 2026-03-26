@@ -4,6 +4,7 @@ import {
   CabinClass,
   FareOption,
   FlightLeg,
+  RoomConfig,
   ServiceTab,
   TripType,
 } from "../types";
@@ -197,4 +198,8 @@ export const FARE_OPTIONS: FareOption[] = [
   { label: "Regular Fare", value: "regular" },
   { label: "Student Fare", value: "student" },
   { label: "Umrah Fare", value: "umrah" },
+];
+
+export const INITIAL_ROOMS: RoomConfig[] = [
+  { id: 1, adults: 2, children: 0, childAges: [] },
 ];

@@ -64,3 +64,10 @@ export interface FareOption {
   value: FareType;
   disabled?: boolean;
 }
+
+export interface RoomConfig {
+  id: number;
+  adults: number;
+  children: number;
+  childAges: number[];
+}
