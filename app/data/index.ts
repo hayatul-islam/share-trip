@@ -694,3 +694,98 @@ export const ROUTES: Route[] = [
     toAirport: "Washington Dull...",
   },
 ];
+
+export const PAYMENT_METHODS = [
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/stPay.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/amexCard.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/visaCard.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/masterCard.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/bkash.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/dbbl.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/nagad.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/upay.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/tap.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/ok.svg",
+  "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/we-accept/dinners-club.svg",
+];
+
+export const ACCREDITATIONS = [
+  {
+    label: "Accredited Member",
+    items: [
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/accredited-member/basis.svg",
+        alt: "BASIS",
+        width: 60,
+        height: 28,
+      },
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/accredited-member/e-cab.svg",
+        alt: "e-CAB",
+        width: 60,
+        height: 28,
+      },
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/accredited-member/pata.svg",
+        alt: "PATA",
+        width: 60,
+        height: 28,
+      },
+    ],
+  },
+  {
+    label: "Verified by",
+    items: [
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/verified-by/comodo.svg",
+        alt: "Comodo",
+        width: 80,
+        height: 32,
+      },
+    ],
+  },
+  {
+    label: "Our Partners",
+    items: [
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/our-partners/google.svg",
+        alt: "Google",
+        width: 80,
+        height: 24,
+      },
+    ],
+  },
+  {
+    label: "Authorised by",
+    items: [
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/authorised-by/iata.svg",
+        alt: "IATA",
+        width: 70,
+        height: 32,
+      },
+    ],
+  },
+  {
+    label: "Certified By",
+    items: [
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/registered-at/dun.svg",
+        alt: "Dun & Bradstreet",
+        width: 70,
+        height: 32,
+      },
+    ],
+  },
+  {
+    label: "Awarded by",
+    items: [
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/awarded-by/superbrandlogo.svg",
+        alt: "Superbrands",
+        width: 70,
+        height: 32,
+      },
+    ],
+  },
+];

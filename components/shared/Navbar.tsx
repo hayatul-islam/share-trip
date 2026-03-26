@@ -15,7 +15,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur ">
+    <nav className="sticky top-0 z-[999] bg-white/95 backdrop-blur ">
       <div className="container h-[68px] flex items-center justify-between">
         {/* Logo */}
         <Logo />

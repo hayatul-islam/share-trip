@@ -1,3 +1,5 @@
+import Footer from "@/components/shared/Footer";
+import { Navbar } from "@/components/shared/Navbar";
 import type { Metadata } from "next";
 import { Murecho } from "next/font/google";
 import "slick-carousel/slick/slick-theme.css";
@@ -25,7 +27,11 @@ export default function RootLayout({
       lang="en"
       className={`${murecho.variable} h-full antialiased bg-background`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -8,12 +8,10 @@ import MostPopularDestinations from "@/components/home/MostPopularDestinations";
 import OurTourPackages from "@/components/home/OurTourPackages";
 import SearchTopAirlines from "@/components/home/SearchTopAirlines";
 import TopRoutes from "@/components/home/TopRoutes";
-import { Navbar } from "@/components/shared/Navbar";
 
 export default function HomePage() {
   return (
     <div className="relative min-h-screen">
-      <Navbar />
       <HeroBanner />
       <BookingSearch />
       <ExclusiveOffers />
