@@ -1,0 +1,64 @@
+"use client";
+
+import { FARE_OPTIONS } from "@/app/data";
+import { FareType } from "@/app/types";
+import { cn } from "@/lib/utils";
+import * as React from "react";
+
+interface FareSelectorProps {
+  value: FareType;
+  onChange: (value: FareType) => void;
+  className?: string;
+}
+
+export const FareSelector: React.FC<FareSelectorProps> = ({
+  value,
+  onChange,
+  className,
+}) => {
+  return (
+    <div className={cn("flex items-center gap-6", className)}>
+      {FARE_OPTIONS.map((option) => {
+        const isActive = value === option.value;
+
+        return (
+          <label
+            key={option.value}
+            className={cn(
+              "flex items-center gap-2 text-sm cursor-pointer",
+              option.disabled && "opacity-50 cursor-not-allowed",
+            )}
+          >
+            <input
+              type="radio"
+              name="fare"
+              value={option.value}
+              checked={isActive}
+              onChange={() => !option.disabled && onChange(option.value)}
+              disabled={option.disabled}
+              className="hidden"
+            />
+
+            <div
+              className={cn(
+                "w-4 h-4 rounded-full border flex items-center justify-center",
+                isActive ? "border-primary" : "border-gray-300",
+                option.disabled && "border-gray-300",
+              )}
+            >
+              {isActive && <div className="w-2 h-2 rounded-full bg-primary" />}
+            </div>
+
+            <span
+              className={cn(
+                isActive ? "text-gray-900 font-medium" : "text-gray-500",
+              )}
+            >
+              {option.label}
+            </span>
+          </label>
+        );
+      })}
+    </div>
+  );
+};

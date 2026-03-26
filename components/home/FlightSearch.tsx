@@ -1,6 +1,6 @@
 "use client";
 import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
-import type { DateRange, FlightLeg, TripType } from "@/app/types";
+import type { DateRange, FareType, FlightLeg, TripType } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeftRight, Plus, Search, X } from "lucide-react";
@@ -8,12 +8,14 @@ import React, { useState } from "react";
 import AirportSelector from "../shared/AirportSelector";
 import DatePicker from "../shared/DatePicker";
 import DateRangePicker from "../shared/DateRangePicker";
+import { FareSelector } from "./FareSelector";
 import TravellerSelectors from "./TravellerSelectors";
 
 const FlightSearch: React.FC = () => {
   const [tripType, setTripType] = useState<TripType>("one-way");
   const [legs, setLegs] = useState<FlightLeg[]>(INITIAL_LEGS);
   const [range, setRange] = useState<DateRange>({ from: new Date(), to: null });
+  const [fare, setFare] = useState<FareType>("regular");
 
   const updateLeg = (id: string, updates: Partial<FlightLeg>): void => {
     setLegs((prev) =>
@@ -54,7 +56,7 @@ const FlightSearch: React.FC = () => {
   const legData: FlightLeg[] = tripType === "multi-city" ? legs : [legs[0]];
 
   return (
-    <div className="px-6 py-4 space-y-5 ">
+    <div className="px-6 py-4 pb-6 space-y-5 ">
       <div className="flex items-center justify-between">
         <Tabs
           value={tripType}
@@ -205,6 +207,8 @@ const FlightSearch: React.FC = () => {
           </Button>
         </div>
       )}
+
+      <FareSelector value={fare} onChange={setFare} />
     </div>
   );
 };

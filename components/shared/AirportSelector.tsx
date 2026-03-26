@@ -106,11 +106,11 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                 {airport.code}
               </h4>
               <div className="w-px border-l border-gray-300 h-7 shrink-0" />
-              <div>
+              <div className="overflow-hidden">
                 <p className="text-[15px] font-medium text-gray-800 leading-snug truncate">
                   {airport.city}
                 </p>
-                <p className="text-[11px] text-gray-500 mt-0.5 truncate w-full">
+                <p className="text-[11px] text-gray-500 mt-0.5 truncate min-w-0 max-w-full">
                   {airport.country}, {airport.fullName}
                 </p>
               </div>

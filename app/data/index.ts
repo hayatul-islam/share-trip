@@ -1,5 +1,12 @@
 import { Baby, Hotel, PersonStanding, Plane, User, Users } from "lucide-react";
-import { Airport, CabinClass, FlightLeg, ServiceTab, TripType } from "../types";
+import {
+  Airport,
+  CabinClass,
+  FareOption,
+  FlightLeg,
+  ServiceTab,
+  TripType,
+} from "../types";
 
 export const NAV_LINKS = [
   {
@@ -185,3 +192,9 @@ export const MONTHS = [
 ];
 
 export const DAYS = ["S", "M", "T", "W", "T", "F", "S"];
+
+export const FARE_OPTIONS: FareOption[] = [
+  { label: "Regular Fare", value: "regular" },
+  { label: "Student Fare", value: "student" },
+  { label: "Umrah Fare", value: "umrah" },
+];

@@ -14,8 +14,6 @@ export type ServiceType =
 
 export type TripType = "one-way" | "round-trip" | "multi-city";
 
-export type FareType = "regular" | "student" | "umrah";
-
 export type CabinClass =
   | "Economy"
   | "Premium Economy"
@@ -58,3 +56,11 @@ export type DateRange = {
   from: Date | null;
   to: Date | null;
 };
+
+export type FareType = "regular" | "student" | "umrah";
+
+export interface FareOption {
+  label: string;
+  value: FareType;
+  disabled?: boolean;
+}
