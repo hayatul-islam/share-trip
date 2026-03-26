@@ -2,6 +2,7 @@
 import { AD_SLIDES, OFFER_SLIDES } from "@/app/data";
 import React, { useRef } from "react";
 import Slider from "react-slick";
+import SectionHeader from "../shared/SectionHeader";
 
 const ExclusiveOffers: React.FC = () => {
   const adSliderRef = useRef<Slider>(null);
@@ -34,9 +35,7 @@ const ExclusiveOffers: React.FC = () => {
 
   return (
     <div className="container pt-16 pb-20">
-      <h2 className="text-[32px] font-bold text-gray-800 mb-4">
-        Exclusive Offers
-      </h2>
+      <SectionHeader title="Exclusive Offers" />
 
       <div className="space-y-20">
         <div className="offer-slider mb-6">

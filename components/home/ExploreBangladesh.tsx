@@ -3,6 +3,7 @@ import { DESTINATIONS } from "@/app/data";
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
+import SectionHeader from "../shared/SectionHeader";
 
 const ExploreBangladesh: React.FC = () => {
   const settings = {
@@ -22,16 +23,11 @@ const ExploreBangladesh: React.FC = () => {
   return (
     <div className="bg-white py-16">
       <div className="container">
-        <div className="mb-6 space-y-2">
-          <h2 className="text-[32px] font-bold text-gray-800">
-            Explore Bangladesh
-          </h2>
-          <p className="text-gray-500 text-sm max-w-xl leading-relaxed">
-            Prepare to experience Bangladesh's rich culture and explore the
-            majestic beauties of Cox's Bazar, Sylhet, Bandarban, Sajek Valley,
-            Rangamati etc. Plan your trip now!
-          </p>
-        </div>
+        <SectionHeader
+          title="Explore Bangladesh"
+          description="Prepare to experience Bangladesh's rich culture and explore the majestic beauties of Cox's Bazar, Sylhet, Bandarban, Sajek Valley, Rangamati etc Plan your trip now!"
+          className="max-w-lg"
+        />
 
         <div className="explore-slider">
           <Slider {...settings}>
@@ -61,9 +57,9 @@ const DestinationCard: React.FC<(typeof DESTINATIONS)[0]> = ({
         height={320}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      {/* Bottom gradient */}
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-      {/* Text */}
+
       <div className="absolute bottom-0 left-0 right-0 p-4">
         <p className="text-white font-bold text-lg leading-tight drop-shadow">
           {name}

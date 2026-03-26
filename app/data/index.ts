@@ -298,3 +298,107 @@ export const DESTINATIONS = [
     image: "/assets/images/explore/AzOSQlJV2UD8QhKVOKLteYWlrI9brl.png",
   },
 ];
+
+// SEARCH TOP AIRLINES
+export const AIRLINES = [
+  {
+    id: 1,
+    name: "Biman Bangladesh Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/BG.png",
+  },
+  {
+    id: 2,
+    name: "US-Bangla Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/BS.png",
+  },
+  {
+    id: 3,
+    name: "NOVOAIR",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/VQ.png",
+  },
+  {
+    id: 4,
+    name: "Air Astra",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/2A.png",
+  },
+  {
+    id: 5,
+    name: "Emirates",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/EK.png",
+  },
+  {
+    id: 6,
+    name: "Singapore Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/SQ.png",
+  },
+  {
+    id: 7,
+    name: "Malaysia Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/MH.png",
+  },
+  {
+    id: 8,
+    name: "Qatar Airways",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/QR.png",
+  },
+  {
+    id: 9,
+    name: "Saudia Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/SV.png",
+  },
+  {
+    id: 10,
+    name: "Air India",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/AI.jpeg",
+  },
+  {
+    id: 11,
+    name: "Gulf Air",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/GF.jpg",
+  },
+  {
+    id: 12,
+    name: "Turkish Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/TK.png",
+  },
+  {
+    id: 13,
+    name: "Thai Airways International",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/TG.png",
+  },
+  {
+    id: 14,
+    name: "Cathay Pacific Airways",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/CX.png",
+  },
+  {
+    id: 15,
+    name: "China Southern Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/CZ.png",
+  },
+  {
+    id: 16,
+    name: "SriLankan Airlines",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/UL.png",
+  },
+  {
+    id: 17,
+    name: "AirAsia",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/AK.png",
+  },
+  {
+    id: 18,
+    name: "Batik Air",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/ID.png",
+  },
+  {
+    id: 19,
+    name: "IndiGo",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/6E.png",
+  },
+  {
+    id: 20,
+    name: "Air Arabia",
+    logo: "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/G9.png",
+  },
+];
