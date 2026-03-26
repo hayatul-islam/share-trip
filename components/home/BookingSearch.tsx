@@ -1,9 +1,9 @@
 "use client";
 import { ServiceType } from "@/app/types";
 import React, { useState } from "react";
+import { Card } from "../ui/card";
 import FlightSearch from "./FlightSearch";
 import ServiceTabs from "./ServiceTabs";
-import { Card } from "./ui/card";
 
 const BookingSearch: React.FC = () => {
   const [activeService, setActiveService] = useState<ServiceType>("flight");

@@ -1,15 +1,13 @@
 "use client";
+import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
+import type { DateRange, FlightLeg, TripType } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeftRight, Plus, Search, X } from "lucide-react";
 import React, { useState } from "react";
-
-import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
-import type { DateRange, FlightLeg, TripType } from "@/app/types";
-
-import AirportSelector from "./AirportSelector";
-import DatePicker from "./DatePicker";
-import DateRangePicker from "./DateRangePicker";
+import AirportSelector from "../shared/AirportSelector";
+import DatePicker from "../shared/DatePicker";
+import DateRangePicker from "../shared/DateRangePicker";
 import TravellerSelectors from "./TravellerSelectors";
 
 const FlightSearch: React.FC = () => {
