@@ -71,3 +71,13 @@ export interface RoomConfig {
   children: number;
   childAges: number[];
 }
+
+export type RouteCategory = "domestic" | "international";
+
+export interface Route {
+  from: string;
+  fromAirport: string;
+  to: string;
+  toAirport: string;
+  category: RouteCategory;
+}
