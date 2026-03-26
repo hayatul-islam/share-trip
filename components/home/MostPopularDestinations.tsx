@@ -53,6 +53,7 @@ const MostPopularDestinations: React.FC = () => {
     dots: true,
     infinite: true,
     autoplay: true,
+    speed: 1000,
     autoplaySpeed: 3000,
     cssEase: "cubic-bezier(0.45, 0, 0.55, 1)",
     slidesToShow: 4.3,

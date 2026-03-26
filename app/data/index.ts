@@ -441,3 +441,102 @@ export const POPULAR_DESTINATIONS = [
       "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=500&h=700&fit=crop",
   },
 ];
+
+export const HOTELS = [
+  {
+    id: 1,
+    name: "Grand Sultan Tea Resort & Golf",
+    rating: 5,
+    reviews: 378,
+    image:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=450&fit=crop",
+  },
+  {
+    id: 2,
+    name: "Ocean Paradise Hotel & Resort",
+    rating: 5,
+    reviews: 345,
+    image:
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=450&fit=crop",
+  },
+  {
+    id: 3,
+    name: "Dream Square Resort",
+    rating: 5,
+    reviews: 324,
+    image:
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&h=450&fit=crop",
+  },
+  {
+    id: 4,
+    name: "Sea Pearl Beach Resort & Spa Cox's Bazar",
+    rating: 5,
+    reviews: 431,
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=450&fit=crop",
+  },
+  {
+    id: 5,
+    name: "Royal Tulip Sea Pearl Beach Resort",
+    rating: 5,
+    reviews: 290,
+    image:
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&h=450&fit=crop",
+  },
+  {
+    id: 6,
+    name: "The Peninsula Chittagong",
+    rating: 5,
+    reviews: 312,
+    image:
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=450&fit=crop",
+  },
+  {
+    id: 7,
+    name: "Amari Dhaka",
+    rating: 5,
+    reviews: 267,
+    image:
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&h=450&fit=crop",
+  },
+  {
+    id: 8,
+    name: "Le Méridien Dhaka",
+    rating: 5,
+    reviews: 489,
+    image:
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?w=600&h=450&fit=crop",
+  },
+  {
+    id: 9,
+    name: "Radisson Blu Dhaka Water Garden",
+    rating: 5,
+    reviews: 401,
+    image:
+      "https://images.unsplash.com/photo-1549294413-26f195200c16?w=600&h=450&fit=crop",
+  },
+  {
+    id: 10,
+    name: "Six Seasons Hotel Gulshan",
+    rating: 4,
+    reviews: 215,
+    image:
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&h=450&fit=crop",
+  },
+  {
+    id: 11,
+    name: "Rose View Hotel Sylhet",
+    rating: 5,
+    reviews: 183,
+    image:
+      "https://images.unsplash.com/photo-1533395427226-788cee25cc7b?w=600&h=450&fit=crop",
+  },
+  {
+    id: 12,
+    name: "Long Beach Hotel Cox's Bazar",
+    rating: 5,
+    reviews: 356,
+    image:
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=600&h=450&fit=crop",
+  },
+];
