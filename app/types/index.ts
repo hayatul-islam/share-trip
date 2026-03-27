@@ -81,3 +81,11 @@ export interface Route {
   toAirport: string;
   category: RouteCategory;
 }
+
+export interface ChatArticle {
+  id: string;
+  title: string;
+  snippet: string;
+  content: string;
+  updatedAt: string;
+}

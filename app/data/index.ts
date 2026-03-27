@@ -2,6 +2,7 @@ import { Baby, Hotel, PersonStanding, Plane, User, Users } from "lucide-react";
 import {
   Airport,
   CabinClass,
+  ChatArticle,
   FareOption,
   FlightLeg,
   RoomConfig,
@@ -799,5 +800,71 @@ export const ACCREDITATIONS = [
         height: 32,
       },
     ],
+  },
+];
+
+export const CHAT_ARTICLES: ChatArticle[] = [
+  {
+    id: "1",
+    title: "How to open ST Pay account",
+    snippet:
+      "Getting Started with ST Pay: Registration Process Before you unlock the convenience and security of...",
+    content:
+      "ST Pay is ShareTrip's integrated payment solution. To open an account, download the ShareTrip app, go to ST Pay section, and complete the KYC verification process with your NID.",
+    updatedAt: "1/20/2026",
+  },
+  {
+    id: "2",
+    title: "How to book hotels from ShareTrip app?",
+    snippet:
+      "Planning a trip to Bangladesh? Book your hotel stay with ease on the user-friendly ShareTrip app! This...",
+    content:
+      "Open the ShareTrip app, tap on Hotels, select your destination, dates, and number of guests, then browse available properties and complete booking with ST Pay or card.",
+    updatedAt: "1/22/2026",
+  },
+  {
+    id: "3",
+    title: "What are Stellar Cards?",
+    snippet:
+      "Stellar Cards are co-branded by ShareTrip, Eastern Bank PLC (EBL), and Visa. This premium series in-...",
+    content:
+      "Stellar Cards are premium co-branded credit cards by ShareTrip, Eastern Bank PLC (EBL), and Visa, offering exclusive travel rewards, lounge access, and discounts on bookings.",
+    updatedAt: "1/15/2026",
+  },
+  {
+    id: "4",
+    title: "What is ShareTrip Cars?",
+    snippet:
+      "Book cars and transfers in Bangladesh and abroad with ShareTrip Cars. Perfect for airport pickups, city...",
+    content:
+      "ShareTrip Cars is a car booking service by ShareTrip that allows you to book cars and car transfers locally in Bangladesh or internationally, for city rides, airport pickups, long-distance trips, and more.",
+    updatedAt: "1/25/2026",
+  },
+  {
+    id: "5",
+    title: "What is the difference between a sticker visa and an e-visa?",
+    snippet:
+      "A sticker visa requires you to submit your physical passport and supporting documents to the embass...",
+    content:
+      "A sticker visa requires physical passport submission to the embassy. An e-visa is processed entirely online and delivered digitally, making it faster and more convenient for eligible destinations.",
+    updatedAt: "1/18/2026",
+  },
+  {
+    id: "6",
+    title: "What is ST Convenience Fee?",
+    snippet:
+      "ShareTrip convenience fee, ShareTrip booking fee explained, VAT on ShareTrip booking, Bangladesh...",
+    content:
+      "The ST Convenience Fee is a small processing charge applied to bookings made via the ShareTrip platform. It covers payment gateway, VAT, and service handling costs.",
+    updatedAt: "1/10/2026",
+  },
+  {
+    id: "7",
+    title: "What is the process of cancelling a purchased ticket on ShareTrip?",
+    snippet:
+      "To cancel a ticket, go to My Trips in the app, select the booking, and tap Cancel. Refunds are processed according to airline/hotel policy...",
+    content:
+      "To cancel a ticket on ShareTrip, navigate to My Trips, select the relevant booking, and choose Cancel. Refunds follow the airline or hotel cancellation policy and are credited back within 7–14 business days.",
+    updatedAt: "1/12/2026",
   },
 ];

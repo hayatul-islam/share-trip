@@ -1,3 +1,4 @@
+import ShareTripChat from "@/components/chat/ShareTripChat";
 import Footer from "@/components/shared/Footer";
 import { Navbar } from "@/components/shared/Navbar";
 import type { Metadata } from "next";
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
+        <ShareTripChat />
         <Footer />
       </body>
     </html>
