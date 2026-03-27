@@ -74,7 +74,8 @@ const SOCIAL_LINKS = [
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-b from-background to-white pt-16">
-      <div className="container space-y-8">
+      <div className="container space-y-8 px-4 sm:px-6 lg:px-8">
+        {/* App Download Section */}
         <div>
           <SectionHeader
             title="Your all-in-one Travel App"
@@ -82,30 +83,31 @@ const Footer: React.FC = () => {
             className="max-w-xl mx-auto text-center"
           />
 
-          <div className="flex items-center justify-center gap-6 flex-wrap px-5">
+          <div className="flex items-center justify-center gap-3 md:gap-6">
             <Image
               src="https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/App-Store.svg"
               alt="Download on the App Store"
-              width={160}
-              height={52}
+              width={140}
+              height={46}
+              className="w-32 sm:w-40 h-auto"
             />
-
             <Image
               src="https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/QR-Code.svg"
               alt="Scan QR to download"
               width={84}
               height={84}
+              className=" w-16 sm:w-20 h-auto"
             />
-
             <Image
               src="https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/Play-Store.svg"
               alt="Get it on Google Play"
-              width={160}
-              height={52}
+              width={140}
+              height={46}
+              className="w-32 sm:w-40 h-auto"
             />
           </div>
 
-          <div className="mt-6 relative flex justify-center">
+          <div className="mt-3 md:mt-6 relative  justify-center">
             <Image
               src="/assets/images/app-screen.png"
               alt="ShareTrip App Preview"
@@ -113,13 +115,14 @@ const Footer: React.FC = () => {
               height={540}
               className="w-full max-w-5xl object-contain drop-shadow-2xl"
             />
-
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-20 bg-white/70 blur-sm rounded-full pointer-events-none" />
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-full h-6 md:h-20 bg-white/90 blur-lg  pointer-events-none" />
           </div>
         </div>
 
-        <div className="grid grid-cols-8 gap-4 pt-6">
-          <div className="col-span-2">
+        {/* Links & Payment Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 pt-6">
+          {/* Brand & Certificates */}
+          <div className="col-span-2 sm:col-span-4 lg:col-span-2">
             <Logo />
             <div className="space-y-1 text-sm text-gray-700 mt-4">
               <p>MoCAT Certificate No.: 0012432</p>
@@ -129,7 +132,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Explore */}
-          <div>
+          <div className="col-span-1">
             <h3 className="font-medium text-gray-800 mb-4">Explore</h3>
             <ul className="space-y-2.5 text-sm text-gray-700">
               {[
@@ -152,7 +155,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="col-span-1">
             <h3 className="font-medium text-gray-800 mb-4">Services</h3>
             <ul className="space-y-2.5 text-sm text-gray-700">
               {["Flight", "Hotel", "Holiday", "Visa"].map((item) => (
@@ -169,7 +172,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Useful Links */}
-          <div>
+          <div className="col-span-1">
             <h3 className="font-medium text-gray-800 mb-4">Useful Links</h3>
             <ul className="space-y-2.5 text-sm text-gray-700">
               {[
@@ -192,7 +195,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Promotions */}
-          <div>
+          <div className="col-span-1">
             <h3 className="font-medium text-gray-800 mb-4">Promotions</h3>
             <ul className="space-y-2.5 text-sm text-gray-700">
               {["News", "Promotions", "VAS"].map((item) => (
@@ -209,23 +212,28 @@ const Footer: React.FC = () => {
           </div>
 
           {/* We Accept */}
-          <div className="col-span-2">
+          <div className="hidden md:block col-span-2 sm:col-span-4 lg:col-span-2">
             <h3 className="font-medium text-gray-800 mb-4">We accept</h3>
             <div className="grid grid-cols-5 gap-2">
               {PAYMENT_METHODS.map((src, i) => (
                 <div key={i}>
-                  <Image src={src} alt="payment" width={100} height={20} />
+                  <Image
+                    src={src}
+                    alt="payment"
+                    width={100}
+                    height={20}
+                    className="h-auto w-full object-contain"
+                  />
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-100" />
 
-        {/* Middle Section - Contact & Offices */}
-        <div className="grid grid-cols-4 gap-8">
+        {/* Contact & Offices */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
           {/* Contact Us */}
           <div>
             <h3 className="font-medium text-gray-800 mb-4">Contact Us</h3>
@@ -254,12 +262,12 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-3 mt-5">
+            <div className="flex justify-center md:justify-start items-center gap-3 mt-5 flex-wrap">
               {SOCIAL_LINKS.map(({ icon, label }) => (
                 <Link
                   key={label}
                   href="#"
-                  className=" flex items-center justify-center text-gray-400 hover:text-primary transition-all duration-200"
+                  className="flex items-center justify-center text-gray-400 hover:text-primary transition-all duration-200"
                   aria-label={label}
                 >
                   {icon}
@@ -311,15 +319,14 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-100" />
 
         {/* Accreditation Section */}
-        <div className="flex justify-between gap-10">
+        <div className="flex flex-wrap gap-6 sm:gap-8 justify-start sm:justify-between">
           {ACCREDITATIONS.map(({ label, items }) => (
             <div key={label}>
               <p className="text-xs text-gray-800 font-medium mb-2">{label}</p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 flex-wrap">
                 {items.map(({ src, alt, width, height }) => (
                   <Image
                     key={alt}
@@ -335,12 +342,11 @@ const Footer: React.FC = () => {
           ))}
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-100" />
 
         {/* Bottom Bar */}
         <div className="pb-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-5 text-sm text-gray-700">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5 text-sm text-gray-700">
             {[
               "Support Center",
               "Payment Security",
@@ -356,7 +362,7 @@ const Footer: React.FC = () => {
               </Link>
             ))}
           </div>
-          <p className="text-sm text-gray-700">
+          <p className="text-sm text-gray-700 text-center sm:text-right">
             Copyright © 2026.{" "}
             <Link href="#" className="text-primary hover:underline">
               ShareTrip
@@ -367,63 +373,6 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
-
-// Simple SVG social icons
-const SocialIcon: React.FC<{ label: string }> = ({ label }) => {
-  const icons: Record<string, React.ReactNode> = {
-    Facebook: (
-      <svg width="1" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-      </svg>
-    ),
-    Messenger: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.405 5.5 3.6 7.2V22l3.3-1.8c.88.245 1.814.376 2.77.376 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.1 12.4l-2.6-2.8-5.1 2.8 5.6-5.9 2.6 2.8 5.1-2.8-5.6 5.9z" />
-      </svg>
-    ),
-    Twitter: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-      </svg>
-    ),
-    Instagram: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <rect
-          x="2"
-          y="2"
-          width="20"
-          height="20"
-          rx="5"
-          ry="5"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          r="4"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <circle cx="17.5" cy="6.5" r="1" />
-      </svg>
-    ),
-    YouTube: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
-      </svg>
-    ),
-    LinkedIn: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
-        <circle cx="4" cy="4" r="2" />
-      </svg>
-    ),
-  };
-  return <>{icons[label] ?? null}</>;
 };
 
 export default Footer;

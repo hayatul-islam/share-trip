@@ -755,6 +755,7 @@ export const ACCREDITATIONS = [
       },
     ],
   },
+
   {
     label: "Authorised by",
     items: [
@@ -767,10 +768,21 @@ export const ACCREDITATIONS = [
     ],
   },
   {
-    label: "Certified By",
+    label: "Registered at",
     items: [
       {
         src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/registered-at/dun.svg",
+        alt: "IATA",
+        width: 70,
+        height: 32,
+      },
+    ],
+  },
+  {
+    label: "Certified By",
+    items: [
+      {
+        src: "https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/certified-by/iso-certification.svg",
         alt: "Dun & Bradstreet",
         width: 70,
         height: 32,

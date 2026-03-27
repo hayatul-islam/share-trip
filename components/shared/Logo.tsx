@@ -9,6 +9,7 @@ const Logo = () => {
         viewBox="0 0 568 160"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="h-8 md:h-10 w-auto"
       >
         {" "}
         <path
