@@ -131,55 +131,44 @@ export default function DateRangePicker({
         align="start"
         sideOffset={6}
       >
-        <div className="p-5">
-          <div className="flex items-start gap-4">
+        <div className="p-4">
+          <div className="relative flex flex-1 gap-2">
             <button
               onClick={handlePrev}
-              className="mt-1 p-1.5 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/100"
+              className="absolute top-0 left-0 p-1 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/100"
             >
               <ChevronLeft size={18} />
             </button>
-
-            <div className="flex flex-1 gap-8">
-              <MonthCalendar
-                {...month1}
-                startDate={displayStart}
-                endDate={displayEnd}
-                hoverDate={hoverDate}
-                onDayClick={handleDayClick}
-                onDayHover={setHoverDate}
-              />
-              <div className="w-px bg-gray-100 self-stretch" />
-              <MonthCalendar
-                {...month2}
-                startDate={displayStart}
-                endDate={displayEnd}
-                hoverDate={hoverDate}
-                onDayClick={handleDayClick}
-                onDayHover={setHoverDate}
-              />
-            </div>
-
+            <MonthCalendar
+              {...month1}
+              startDate={displayStart}
+              endDate={displayEnd}
+              hoverDate={hoverDate}
+              onDayClick={handleDayClick}
+              onDayHover={setHoverDate}
+            />
+            <div className="w-px bg-gray-100 self-stretch" />
+            <MonthCalendar
+              {...month2}
+              startDate={displayStart}
+              endDate={displayEnd}
+              hoverDate={hoverDate}
+              onDayClick={handleDayClick}
+              onDayHover={setHoverDate}
+            />
             <button
               onClick={handleNext}
-              className="mt-1 p-1.5 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/50"
+              className="absolute top-0 right-0 p-1 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/50"
             >
               <ChevronRight size={18} />
             </button>
           </div>
 
-          <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
-            <p className="text-xs text-gray-400">
-              {selecting === "end"
-                ? "Now select a return date"
-                : displayStart && displayEnd
-                  ? `${format(toDate(displayStart), "MMM d")} → ${format(toDate(displayEnd), "MMM d, yyyy")}`
-                  : "Select departure date"}
-            </p>
+          <div className="flex items-center justify-end mt-4 pt-3 border-t border-gray-100">
             <Button
               onClick={handleApply}
               disabled={selecting === "end"}
-              className="bg-primary hover:bg-primary/90 disabled:opacity-40 text-white rounded-lg px-6 py-2 text-sm font-medium"
+              className="bg-primary hover:bg-primary/90 disabled:opacity-40 text-white rounded-lg px-4 py-2 text-[12px] font-medium"
             >
               Apply
             </Button>
@@ -258,7 +247,7 @@ function MonthCalendar({
   const effectiveEnd = endDate ?? hoverDate;
 
   return (
-    <div className="flex-1 min-w-[240px]">
+    <div className="flex-1 min-w-[200px]">
       <div className="text-center font-semibold text-sm text-gray-800 mb-3">
         {MONTHS[month]} {year}
       </div>
@@ -336,7 +325,7 @@ function TriggerButton({
   return (
     <button
       type="button"
-      className="w-full shrink-0 text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors focus:outline-none bg-white"
+      className="w-full shrink-0 text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors focus:outline-none bg-white cursor-pointer"
     >
       <div className="flex items-center gap-2.5">
         <h4 className="text-lg font-medium text-gray-800 leading-none tabular-nums">

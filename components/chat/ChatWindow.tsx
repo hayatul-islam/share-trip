@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function ChatWindow({ onClose, state }: Props) {
-  const [activeTab, setActiveTab] = useState<Tab>(state);
+  const [activeTab, setActiveTab] = useState<string>(state);
   const [selectedArticle, setSelectedArticle] = useState<ChatArticle | null>(
     null,
   );
