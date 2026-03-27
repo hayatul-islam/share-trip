@@ -29,7 +29,7 @@ const BestHotels: React.FC = () => {
         <SectionHeader
           title="Best Hotels for Your Next Trip"
           description="Luxurious or budget-friendly hotels, villas or resorts, browse accommodations at ShareTrip that meet the need. Book Long-term or short-term accommodation from our hotel deals"
-          className="max-w-xl"
+          className="max-w-2xl"
         />
 
         <div className="best-hotels-slider">

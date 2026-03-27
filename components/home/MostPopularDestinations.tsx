@@ -110,10 +110,10 @@ const MostPopularDestinations: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent" />
 
                     <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <p className="text-white font-bold text-lg leading-tight drop-shadow">
+                      <p className="text-white font-bold text-[16px] leading-tight drop-shadow">
                         {dest.name}
                       </p>
-                      <p className="text-white/80 text-sm mt-0.5">
+                      <p className="text-white/80 text-[12px] mt-0.5">
                         {dest.hotels.toLocaleString()} Hotels Available
                       </p>
                     </div>

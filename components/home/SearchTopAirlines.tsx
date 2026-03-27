@@ -13,7 +13,7 @@ const SearchTopAirlines: React.FC = () => {
         description="ShareTrip's user-friendly platform connects you to top airlines
           instantly. Enjoy a comfortable and hassle-free journey on any
           destination and get tickets of top airlines easily"
-        className="text-center max-w-xl mx-auto"
+        className="text-center max-w-2xl mx-auto"
       />
 
       <div className="grid grid-cols-4 gap-4">
@@ -35,7 +35,7 @@ const AirlineItem: React.FC<{ name: string; logo: string }> = ({
   name,
   logo,
 }) => (
-  <button className="flex items-center gap-3 w-full group hover:bg-white rounded-lg p-3 transition-all duration-200 hover:shadow-sm">
+  <button className="flex items-center gap-3 w-full group hover:bg-white rounded-lg p-3 transition-all duration-500 hover:shadow-md">
     <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
       <Image
         src={logo}
@@ -47,13 +47,24 @@ const AirlineItem: React.FC<{ name: string; logo: string }> = ({
       />
     </div>
 
-    <span className=" font-medium text-gray-800 text-left leading-tight flex-1">
+    <p className="font-[450] text-[15px] text-gray-800 text-left leading-tight flex-1">
       {name}
-    </span>
+    </p>
 
-    <ChevronRight
-      size={20}
-      className="text-gray-600 transition-colors font-medium shrink-0"
-    />
+    <div className="relative w-5 h-5 overflow-hidden shrink-0">
+      <ChevronRight
+        size={20}
+        className="absolute inset-0 text-gray-500 font-medium
+          transition-transform duration-500
+          group-hover:translate-x-8"
+      />
+
+      <ChevronRight
+        size={20}
+        className="absolute inset-0 text-gray-500 font-medium
+          transition-transform duration-500
+          -translate-x-12 group-hover:translate-x-0"
+      />
+    </div>
   </button>
 );

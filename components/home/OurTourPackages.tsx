@@ -29,7 +29,7 @@ const OurTourPackages: React.FC = () => {
         <SectionHeader
           title="Our Tour Packages for You"
           description="Plan your dream gateway and choose from uncountable tour packages at ShareTrip. Book our holiday packages for the best deals on any international trip."
-          className="max-w-xl"
+          className="max-w-2xl"
         />
 
         <div className="best-hotels-slider">

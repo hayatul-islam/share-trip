@@ -1,5 +1,6 @@
 "use client";
 import { AD_SLIDES, OFFER_SLIDES } from "@/app/data";
+import Image from "next/image";
 import React, { useRef } from "react";
 import Slider from "react-slick";
 import SectionHeader from "../shared/SectionHeader";
@@ -9,8 +10,10 @@ const ExclusiveOffers: React.FC = () => {
 
   const offerSettings = {
     dots: true,
-    infinite: false,
-    speed: 400,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 3,
     arrows: false,
@@ -23,7 +26,7 @@ const ExclusiveOffers: React.FC = () => {
   const adSettings = {
     dots: false,
     infinite: true,
-    speed: 600,
+    speed: 1000,
     cssEase: "cubic-bezier(0.45, 0, 0.55, 1)",
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -34,11 +37,11 @@ const ExclusiveOffers: React.FC = () => {
   };
 
   return (
-    <div className="container pt-16 pb-20">
-      <SectionHeader title="Exclusive Offers" />
+    <div className="container pt-15 pb-20">
+      <SectionHeader title="Exclusive Offers" className="!pb-6" />
 
       <div className="space-y-20">
-        <div className="offer-slider mb-6">
+        <div className="-mx-2.5">
           <Slider {...offerSettings}>
             {OFFER_SLIDES.map((slide) => (
               <OfferCard key={slide.id} {...slide} />
@@ -46,7 +49,7 @@ const ExclusiveOffers: React.FC = () => {
           </Slider>
         </div>
 
-        <div className="relative rounded-xl overflow-hidden h-32 shadow-md mt-16">
+        <div className="relative rounded-xl overflow-hidden h-32 shadow-md">
           <div className="absolute top-2.5 right-6 z-10 bg-gray-600/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
             AD
           </div>
@@ -54,11 +57,13 @@ const ExclusiveOffers: React.FC = () => {
           <Slider ref={adSliderRef} {...adSettings}>
             {AD_SLIDES.map((slide) => (
               <div key={slide.id}>
-                <div className="relative h-full">
-                  <img
+                <div className="relative h-32">
+                  <Image
                     src={slide.image}
                     alt="Advertisement"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
                   />
                   <div className="absolute inset-0 bg-black/20" />
                 </div>
@@ -81,11 +86,13 @@ const ExclusiveOffers: React.FC = () => {
           </button>
         </div>
 
-        <div>
-          <img
-            src="assets/images/offers/homepage-banner-ads-4.png"
+        <div className="relative w-full h-auto aspect-[16/4] rounded-xl overflow-hidden">
+          <Image
+            src="/assets/images/offers/homepage-banner-ads-4.png"
             alt=""
-            className="rounded-xl w-full h-auto"
+            fill
+            className="object-cover rounded-xl"
+            sizes="100vw"
           />
         </div>
       </div>
@@ -100,17 +107,19 @@ const OfferCard: React.FC<(typeof OFFER_SLIDES)[0]> = ({
   title,
   subtitle,
 }) => (
-  <div className="px-1.5">
+  <div className="px-2.5">
     <div className="relative overflow-hidden rounded-xl h-44 group cursor-pointer shadow-sm">
-      <img
+      <Image
         src={image}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-110"
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
 
-      <div className="absolute inset-0 bg-primary/98 translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out flex flex-col  p-4">
+      <div className="absolute inset-0 bg-primary/98 translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out flex flex-col p-4">
         <p className="text-white font-bold text-lg leading-tight drop-shadow-lg">
           {title}
         </p>

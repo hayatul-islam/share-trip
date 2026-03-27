@@ -7,9 +7,11 @@ interface SectionProps {
 const SectionHeader = ({ title, description, className }: SectionProps) => {
   return (
     <div className={`${className} pb-8 space-y-2 `}>
-      <h2 className="text-[32px] font-bold text-gray-800">{title}</h2>
+      <h2 className="text-[32px] font-bold text-[#1A2B3D]">{title}</h2>
       {description && (
-        <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+        <p className="text-[#5A6573] text-[15px] leading-relaxed">
+          {description}
+        </p>
       )}
     </div>
   );

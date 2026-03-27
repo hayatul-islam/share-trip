@@ -7,15 +7,16 @@ const GrowBusiness: React.FC = () => {
     <div
       className="py-16"
       style={{
-        background: "linear-gradient(to right, #BBD9FD, #FCE1C5)",
+        background:
+          "linear-gradient(89.98deg, rgb(184, 217, 255) -0.12%, rgb(255, 225, 194) 100.36%)",
       }}
     >
       <div className="container flex items-center justify-between">
         <div className="w-full">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+          <h2 className="text-2xl md:text-[32px] font-bold text-gray-800">
             Grow Your Business with ShareTrip Shop
           </h2>
-          <p className="text-gray-600 mt-1.5 text-md">
+          <p className="text-gray-600 mt-1.5 text-[16px]">
             Partner with us to reach more customers, boost sales, and expand
             your brand effortlessly.
           </p>

@@ -26,7 +26,7 @@ const ExploreBangladesh: React.FC = () => {
         <SectionHeader
           title="Explore Bangladesh"
           description="Prepare to experience Bangladesh's rich culture and explore the majestic beauties of Cox's Bazar, Sylhet, Bandarban, Sajek Valley, Rangamati etc Plan your trip now!"
-          className="max-w-lg"
+          className="max-w-2xl"
         />
 
         <div className="explore-slider">
@@ -60,11 +60,11 @@ const DestinationCard: React.FC<(typeof DESTINATIONS)[0]> = ({
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-      <div className="absolute bottom-0 left-0 right-0 p-4">
-        <p className="text-white font-bold text-lg leading-tight drop-shadow">
+      <div className="absolute bottom-0 left-0 right-0 p-4 group-hover:bottom-2 transform duration-500">
+        <p className="text-white font-bold text-[16px] leading-tight drop-shadow">
           {name}
         </p>
-        <p className="text-white/80 text-sm mt-0.5">
+        <p className="text-white/80 text-[12px] mt-0.5">
           {hotels} Hotels Available
         </p>
       </div>

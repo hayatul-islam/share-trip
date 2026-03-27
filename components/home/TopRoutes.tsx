@@ -62,32 +62,53 @@ const RouteCard: React.FC<{
   to: string;
   toAirport: string;
 }> = ({ from, fromAirport, to, toAirport }) => (
-  <div className="relative group flex items-center justify-between rounded-xl px-4 py-4 bg-gray-50 cursor-pointer border border-gray-100 hover:border-primary transition-all duration-300">
+  <div className="relative group flex items-center justify-between rounded-xl px-4 py-4 bg-gray-50 cursor-pointer border border-gray-100 hover:border-primary transition-all duration-500">
     <div className="min-w-0">
-      <p className="font-medium text-md text-gray-800 group-hover:text-primary transition-colors duration-300">
+      <p className="font-medium text-[16px] text-gray-800 group-hover:text-primary transition-colors duration-300">
         {from}
       </p>
-      <p className="text-gray-600 text-sm mt-0.5 truncate">{fromAirport}</p>
+      <p className="text-gray-700 text-[14px] mt-0.5 truncate">{fromAirport}</p>
     </div>
 
     <div className="absolute top-[50%] left-[50%] translate-[-50%] w-[2px] h-12 border z-0 border-primary/10" />
-    <div className="absolute top-[50%] left-[50%] translate-[-50%] rounded-full p-1.5 bg-gray-100 group-hover:bg-primary transition-all duration-300 z-30">
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+  rounded-full h-6 w-6 flex justify-center items-center 
+  bg-gray-100 group-hover:bg-primary transition-all duration-300 
+  z-30 overflow-hidden"
+    >
       <svg
-        width="12"
-        height="12"
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-primary group-hover:fill-white transition-all duration-300 rotate-50"
+        className="absolute fill-primary group-hover:fill-white 
+    transition-all duration-500 rotate-45 
+    -translate-x-6 translate-y-6 
+    group-hover:translate-x-0 group-hover:translate-y-0"
+      >
+        <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+      </svg>
+
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        className="absolute fill-primary group-hover:fill-white 
+    transition-all duration-500 rotate-45 
+    translate-x-0 translate-y-0 
+    group-hover:translate-x-6 group-hover:-translate-y-6"
       >
         <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
       </svg>
     </div>
 
     <div className="min-w-0 text-right">
-      <p className="font-medium text-md text-gray-800 group-hover:text-primary transition-colors duration-300">
+      <p className="font-medium text-[16px] text-gray-800 group-hover:text-primary transition-colors duration-300">
         {to}
       </p>
-      <p className="text-gray-600 text-sm mt-0.5 truncate">{toAirport}</p>
+      <p className="text-gray-700 text-[14px] mt-0.5 truncate">{toAirport}</p>
     </div>
   </div>
 );
