@@ -1,5 +1,4 @@
 "use client";
-
 import { DAYS, MONTHS } from "@/app/data";
 import { CalendarDate, DateRange } from "@/app/types";
 import { Button } from "@/components/ui/button";
@@ -17,6 +16,178 @@ interface DateRangePickerProps {
   range?: DateRange;
   onChange?: (range: DateRange) => void;
   placeholder?: { from?: string; to?: string };
+}
+
+export default function DateRangePicker({
+  range,
+  onChange,
+  placeholder = { from: "Departure", to: "--" },
+}: DateRangePickerProps) {
+  const today = new Date();
+
+  const defaultFrom = toCalendarDate(today);
+  const defaultTo: CalendarDate = {
+    year:
+      today.getMonth() === 11 ? today.getFullYear() + 1 : today.getFullYear(),
+    month: (today.getMonth() + 1) % 12,
+    day: 1,
+  };
+
+  const [open, setOpen] = useState(false);
+  const [viewYear, setViewYear] = useState(today.getFullYear());
+  const [viewMonth, setViewMonth] = useState(today.getMonth());
+
+  const [committedStart, setCommittedStart] = useState<CalendarDate>(
+    range?.from ? toCalendarDate(range.from) : defaultFrom,
+  );
+  const [committedEnd, setCommittedEnd] = useState<CalendarDate>(
+    range?.to ? toCalendarDate(range.to) : defaultTo,
+  );
+
+  const [tempStart, setTempStart] = useState<CalendarDate | null>(null);
+  const [tempEnd, setTempEnd] = useState<CalendarDate | null>(null);
+  const [selecting, setSelecting] = useState<"end" | null>(null);
+  const [hoverDate, setHoverDate] = useState<CalendarDate | null>(null);
+
+  const month1 = { year: viewYear, month: viewMonth };
+  const month2 = {
+    year: viewMonth === 11 ? viewYear + 1 : viewYear,
+    month: (viewMonth + 1) % 12,
+  };
+
+  const handlePrev = () => {
+    if (viewMonth === 0) {
+      setViewMonth(11);
+      setViewYear((y) => y - 1);
+    } else setViewMonth((m) => m - 1);
+  };
+
+  const handleNext = () => {
+    if (viewMonth === 11) {
+      setViewMonth(0);
+      setViewYear((y) => y + 1);
+    } else setViewMonth((m) => m + 1);
+  };
+
+  const handleDayClick = (date: CalendarDate) => {
+    if (!tempStart || selecting === null) {
+      setTempStart(date);
+      setTempEnd(null);
+      setSelecting("end");
+    } else {
+      const s = toDate(tempStart);
+      const e = toDate(date);
+      if (e >= s) {
+        setTempEnd(date);
+      } else {
+        setTempEnd(tempStart);
+        setTempStart(date);
+      }
+      setSelecting(null);
+    }
+  };
+
+  const handleApply = () => {
+    const newStart = tempStart ?? committedStart;
+    const newEnd = tempEnd ?? committedEnd;
+    setCommittedStart(newStart);
+    setCommittedEnd(newEnd);
+    onChange?.({ from: toDate(newStart), to: toDate(newEnd) });
+    setOpen(false);
+    setTempStart(null);
+    setTempEnd(null);
+    setSelecting(null);
+  };
+
+  const handleOpenChange = (o: boolean) => {
+    if (!o) {
+      setTempStart(null);
+      setTempEnd(null);
+      setSelecting(null);
+    }
+    setOpen(o);
+  };
+
+  const displayStart = tempStart ?? committedStart;
+  const displayEnd = tempEnd ?? (selecting === "end" ? null : committedEnd);
+
+  return (
+    <Popover open={open} onOpenChange={handleOpenChange}>
+      <PopoverTrigger asChild>
+        <div className="flex items-center gap-2 w-full cursor-pointer">
+          <TriggerButton
+            date={displayStart}
+            placeholder={placeholder.from ?? "Departure"}
+          />
+          <TriggerButton
+            date={displayEnd}
+            placeholder={placeholder.to ?? "--"}
+          />
+        </div>
+      </PopoverTrigger>
+
+      <PopoverContent
+        className="w-auto p-0 shadow-xl border-gray-200 bg-white rounded-2xl"
+        align="start"
+        sideOffset={6}
+      >
+        <div className="p-5">
+          <div className="flex items-start gap-4">
+            <button
+              onClick={handlePrev}
+              className="mt-1 p-1.5 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/100"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            <div className="flex flex-1 gap-8">
+              <MonthCalendar
+                {...month1}
+                startDate={displayStart}
+                endDate={displayEnd}
+                hoverDate={hoverDate}
+                onDayClick={handleDayClick}
+                onDayHover={setHoverDate}
+              />
+              <div className="w-px bg-gray-100 self-stretch" />
+              <MonthCalendar
+                {...month2}
+                startDate={displayStart}
+                endDate={displayEnd}
+                hoverDate={hoverDate}
+                onDayClick={handleDayClick}
+                onDayHover={setHoverDate}
+              />
+            </div>
+
+            <button
+              onClick={handleNext}
+              className="mt-1 p-1.5 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/50"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+            <p className="text-xs text-gray-400">
+              {selecting === "end"
+                ? "Now select a return date"
+                : displayStart && displayEnd
+                  ? `${format(toDate(displayStart), "MMM d")} → ${format(toDate(displayEnd), "MMM d, yyyy")}`
+                  : "Select departure date"}
+            </p>
+            <Button
+              onClick={handleApply}
+              disabled={selecting === "end"}
+              className="bg-primary hover:bg-primary/90 disabled:opacity-40 text-white rounded-lg px-6 py-2 text-sm font-medium"
+            >
+              Apply
+            </Button>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
 }
 
 function toCalendarDate(d: Date): CalendarDate {
@@ -182,179 +353,5 @@ function TriggerButton({
         </div>
       </div>
     </button>
-  );
-}
-
-// ─── Main Component ───────────────────────────────────────────────────────────
-
-export default function DateRangePicker({
-  range,
-  onChange,
-  placeholder = { from: "Departure", to: "Return" },
-}: DateRangePickerProps) {
-  const today = new Date();
-
-  const defaultFrom = toCalendarDate(today);
-  const defaultTo: CalendarDate = {
-    year:
-      today.getMonth() === 11 ? today.getFullYear() + 1 : today.getFullYear(),
-    month: (today.getMonth() + 1) % 12,
-    day: 9,
-  };
-
-  const [open, setOpen] = useState(false);
-  const [viewYear, setViewYear] = useState(today.getFullYear());
-  const [viewMonth, setViewMonth] = useState(today.getMonth());
-
-  const [committedStart, setCommittedStart] = useState<CalendarDate>(
-    range?.from ? toCalendarDate(range.from) : defaultFrom,
-  );
-  const [committedEnd, setCommittedEnd] = useState<CalendarDate>(
-    range?.to ? toCalendarDate(range.to) : defaultTo,
-  );
-
-  const [tempStart, setTempStart] = useState<CalendarDate | null>(null);
-  const [tempEnd, setTempEnd] = useState<CalendarDate | null>(null);
-  const [selecting, setSelecting] = useState<"end" | null>(null);
-  const [hoverDate, setHoverDate] = useState<CalendarDate | null>(null);
-
-  const month1 = { year: viewYear, month: viewMonth };
-  const month2 = {
-    year: viewMonth === 11 ? viewYear + 1 : viewYear,
-    month: (viewMonth + 1) % 12,
-  };
-
-  const handlePrev = () => {
-    if (viewMonth === 0) {
-      setViewMonth(11);
-      setViewYear((y) => y - 1);
-    } else setViewMonth((m) => m - 1);
-  };
-
-  const handleNext = () => {
-    if (viewMonth === 11) {
-      setViewMonth(0);
-      setViewYear((y) => y + 1);
-    } else setViewMonth((m) => m + 1);
-  };
-
-  const handleDayClick = (date: CalendarDate) => {
-    if (!tempStart || selecting === null) {
-      setTempStart(date);
-      setTempEnd(null);
-      setSelecting("end");
-    } else {
-      const s = toDate(tempStart);
-      const e = toDate(date);
-      if (e >= s) {
-        setTempEnd(date);
-      } else {
-        setTempEnd(tempStart);
-        setTempStart(date);
-      }
-      setSelecting(null);
-    }
-  };
-
-  const handleApply = () => {
-    const newStart = tempStart ?? committedStart;
-    const newEnd = tempEnd ?? committedEnd;
-    setCommittedStart(newStart);
-    setCommittedEnd(newEnd);
-    onChange?.({ from: toDate(newStart), to: toDate(newEnd) });
-    setOpen(false);
-    setTempStart(null);
-    setTempEnd(null);
-    setSelecting(null);
-  };
-
-  const handleOpenChange = (o: boolean) => {
-    if (!o) {
-      setTempStart(null);
-      setTempEnd(null);
-      setSelecting(null);
-    }
-    setOpen(o);
-  };
-
-  const displayStart = tempStart ?? committedStart;
-  const displayEnd = tempEnd ?? (selecting === "end" ? null : committedEnd);
-
-  return (
-    <Popover open={open} onOpenChange={handleOpenChange}>
-      <PopoverTrigger asChild>
-        <div className="flex items-center gap-2 w-full cursor-pointer">
-          <TriggerButton
-            date={displayStart}
-            placeholder={placeholder.from ?? "Departure"}
-          />
-          <TriggerButton
-            date={displayEnd}
-            placeholder={placeholder.to ?? "Return"}
-          />
-        </div>
-      </PopoverTrigger>
-
-      <PopoverContent
-        className="w-auto p-0 shadow-xl border-gray-200 bg-white rounded-2xl"
-        align="start"
-        sideOffset={6}
-      >
-        <div className="p-5">
-          <div className="flex items-start gap-4">
-            <button
-              onClick={handlePrev}
-              className="mt-1 p-1.5 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/100"
-            >
-              <ChevronLeft size={18} />
-            </button>
-
-            <div className="flex flex-1 gap-8">
-              <MonthCalendar
-                {...month1}
-                startDate={displayStart}
-                endDate={displayEnd}
-                hoverDate={hoverDate}
-                onDayClick={handleDayClick}
-                onDayHover={setHoverDate}
-              />
-              <div className="w-px bg-gray-100 self-stretch" />
-              <MonthCalendar
-                {...month2}
-                startDate={displayStart}
-                endDate={displayEnd}
-                hoverDate={hoverDate}
-                onDayClick={handleDayClick}
-                onDayHover={setHoverDate}
-              />
-            </div>
-
-            <button
-              onClick={handleNext}
-              className="mt-1 p-1.5 rounded-full hover:bg-primary/10 transition-colors text-gray-400 hover:text-primary/50"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
-            <p className="text-xs text-gray-400">
-              {selecting === "end"
-                ? "Now select a return date"
-                : displayStart && displayEnd
-                  ? `${format(toDate(displayStart), "MMM d")} → ${format(toDate(displayEnd), "MMM d, yyyy")}`
-                  : "Select departure date"}
-            </p>
-            <Button
-              onClick={handleApply}
-              disabled={selecting === "end"}
-              className="bg-primary hover:bg-primary/90 disabled:opacity-40 text-white rounded-lg px-6 py-2 text-sm font-medium"
-            >
-              Apply
-            </Button>
-          </div>
-        </div>
-      </PopoverContent>
-    </Popover>
   );
 }

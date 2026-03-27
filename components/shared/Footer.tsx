@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
 
           <div className="mt-6 relative flex justify-center">
             <Image
-              src="https://cdn.sharetrip.net/sharetrip_net/production/public/images/sample-images/app-screen.png"
+              src="/assets/images/app-screen.png"
               alt="ShareTrip App Preview"
               width={960}
               height={540}

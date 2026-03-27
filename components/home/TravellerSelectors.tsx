@@ -1,5 +1,4 @@
 "use client";
-
 import { CABIN_CLASSES, TRAVELLER_CONFIG } from "@/app/data";
 import { CabinClass, TravellerCounts } from "@/app/types";
 import { Button } from "@/components/ui/button";
@@ -75,13 +74,13 @@ function TravellerPicker({
                 <div key={key} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-6 flex items-center justify-center">
-                      <Icon className="w-4" />
+                      <Icon className="w-4 text-gray-500" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-800">
+                      <p className="text-sm text-gray-900 font-normal">
                         {label}
                       </p>
-                      <p className="text-xs text-gray-400">{sub}</p>
+                      <p className="text-xs text-gray-700">{sub}</p>
                     </div>
                   </div>
                   <Stepper
@@ -151,14 +150,14 @@ function CabinClassSelector({
                   setOpen(false);
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors
-                  ${isSelected ? "bg-primary/10 text-blue-700 font-semibold" : "text-gray-700 hover:bg-gray-50"}`}
+                  ${isSelected ? "bg-primary/10 text-primary font-medium" : "text-gray-700 hover:bg-gray-50"}`}
               >
                 <span
                   className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0
-                  ${isSelected ? "border-primary/100" : "border-gray-300"}`}
+                  ${isSelected ? "border-primary" : "border-gray-300"}`}
                 >
                   {isSelected && (
-                    <span className="w-2 h-2 rounded-full bg-primary/100" />
+                    <span className="w-2 h-2 rounded-full bg-primary" />
                   )}
                 </span>
                 {cabin}
@@ -187,7 +186,7 @@ function Stepper({
       <button
         onClick={() => onChange(Math.max(min, value - 1))}
         disabled={value <= min}
-        className="w-7 h-7 rounded-full border-2 border-blue-400 flex items-center justify-center
+        className="w-6 h-6 rounded-full border border-primary flex items-center justify-center
           text-primary/100 hover:bg-primary/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
       >
         <Minus size={13} strokeWidth={2.5} />
@@ -198,8 +197,8 @@ function Stepper({
       <button
         onClick={() => onChange(Math.min(max, value + 1))}
         disabled={value >= max}
-        className="w-7 h-7 rounded-full border-2 border-primary/100 bg-white flex items-center justify-center
-          text-primary/100 hover:bg-primary/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+        className="w-6 h-6 rounded-full border border-primary bg-white flex items-center justify-center
+          text-primary hover:bg-primary/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
       >
         <Plus size={13} strokeWidth={2.5} />
       </button>

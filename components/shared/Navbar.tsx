@@ -21,12 +21,12 @@ export function Navbar() {
         <Logo />
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-[12px]">
           {NAV_LINKS.map((item) => {
             return item.type === "dropdown" ? (
               <DropdownMenu key={item.name}>
                 <DropdownMenuTrigger asChild>
-                  <button className="group px-2 py-2 text-sm flex items-center gap-1 hover:text-primary data-[state=open]:text-primary">
+                  <button className="group px-2 py-2 text-sm text-[#5a6573] font-[450] flex items-center gap-1 hover:text-primary data-[state=open]:text-primary">
                     {item.name}
                     <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
                   </button>
@@ -48,7 +48,7 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.link}
-                className="px-2 py-2 text-sm hover:text-primary"
+                className="px-2 py-2 text-sm text-[#5a6573] font-[450] hover:text-primary"
               >
                 {item.name}
               </Link>

@@ -12,7 +12,7 @@ import { FareSelector } from "./FareSelector";
 import TravellerSelectors from "./TravellerSelectors";
 
 const FlightSearch: React.FC = () => {
-  const [tripType, setTripType] = useState<TripType>("one-way");
+  const [tripType, setTripType] = useState<TripType>("round-trip");
   const [legs, setLegs] = useState<FlightLeg[]>(INITIAL_LEGS);
   const [range, setRange] = useState<DateRange>({ from: new Date(), to: null });
   const [fare, setFare] = useState<FareType>("regular");
@@ -160,7 +160,7 @@ const FlightSearch: React.FC = () => {
             {tripType !== "multi-city" && (
               <Button
                 type="button"
-                className="bg-yellow hover:bg-yellow/80 text-white rounded-xl h-[62px] w-[62px]"
+                className="bg-yellow/85 hover:bg-yellow text-white rounded-xl h-[62px] w-[62px]"
               >
                 <Search className="!h-6 !w-6" />
               </Button>
@@ -172,8 +172,8 @@ const FlightSearch: React.FC = () => {
                   type="button"
                   onClick={() => removeLeg(leg.id)}
                   aria-label="Remove flight leg"
-                  className="w-6 h-6 rounded-full bg-gray-400 text-white hover:bg-red-50 hover:text-red-400
-                    flex items-center justify-center transition-colors"
+                  className="w-6 h-6 rounded-full bg-gray-400 text-white
+                    flex items-center justify-center transition-colors cursor-pointer"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -200,7 +200,7 @@ const FlightSearch: React.FC = () => {
 
           <Button
             type="button"
-            className="bg-yellow hover:bg-yellow/80 text-white rounded-xl px-6 h-12 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
+            className="bg-yellow/85 hover:bg-yellow text-white rounded-xl px-6 h-12 text-[15px] font-semibold gap-2 shadow-md shadow-orange-100 transition-all"
           >
             <Search className="w-4 h-4" />
             Search

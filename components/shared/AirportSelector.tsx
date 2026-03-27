@@ -96,7 +96,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                   onClick={handleClear}
                   className="shrink-0 w-5 h-5 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors"
                 >
-                  <X className="w-3 h-3 text-gray-500" />
+                  <X className="w-3 h-3 text-gray-700" />
                 </button>
               )}
             </div>
@@ -110,7 +110,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                 <p className="text-[15px] font-medium text-gray-800 leading-snug truncate">
                   {airport.city}
                 </p>
-                <p className="text-[11px] text-gray-500 mt-0.5 truncate min-w-0 max-w-full">
+                <p className="text-[11px] text-gray-700 mt-0.5 truncate min-w-0 max-w-full">
                   {airport.country}, {airport.fullName}
                 </p>
               </div>
@@ -144,7 +144,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                     type="button"
                     onClick={() => handleSelect(ap)}
                     className={cn(
-                      "w-full flex items-center gap-3 px-4 py-2.5 transition-colors text-left",
+                      "w-full flex items-center gap-3 px-4 py-2.5 transition-colors text-left border-b border-gray-100",
                       isSelected
                         ? "bg-blue-50 hover:bg-blue-50"
                         : "hover:bg-gray-50",
@@ -152,13 +152,13 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                   >
                     <span
                       className={cn(
-                        "text-[13px] font-medium w-10 shrink-0 tabular-nums",
+                        "text-[13px] font-medium w-6 shrink-0 tabular-nums",
                         isSelected ? "text-primary" : "text-gray-800",
                       )}
                     >
                       {ap.code}
                     </span>
-
+                    <div className="w-px border-l border-gray-100 h-7 shrink-0" />
                     <div className="min-w-0">
                       <p
                         className={cn(
@@ -168,7 +168,8 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                       >
                         {ap.city}
                       </p>
-                      <p className="text-[11px] text-gray-400 truncate mt-0.5">
+
+                      <p className="text-[11px] text-gray-700 truncate mt-0.5">
                         {ap.country}, {ap.fullName}
                       </p>
                     </div>

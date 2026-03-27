@@ -51,7 +51,7 @@ export const FareSelector: React.FC<FareSelectorProps> = ({
 
             <span
               className={cn(
-                isActive ? "text-gray-900 font-medium" : "text-gray-500",
+                isActive ? "text-gray-800 font-medium" : "text-gray-700",
               )}
             >
               {option.label}
