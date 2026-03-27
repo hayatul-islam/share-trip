@@ -2,6 +2,7 @@
 
 import { CHAT_ARTICLES } from "@/app/data";
 import { ChatArticle } from "@/app/types";
+import { BookOpen, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 interface Props {
@@ -20,14 +21,14 @@ export default function ArticlesTab({ onSelect }: Props) {
   return (
     <div className="flex flex-col h-full">
       {/* Search */}
-      <div className="px-4 pt-4 pb-3 flex-shrink-0">
+      <div className="px-4 pb-3 flex-shrink-0 bg-primary rounded-b-2xl">
         <div className="flex items-center gap-2 bg-gray-100 rounded-xl px-3 py-2.5">
           <svg
             width="16"
             height="16"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#9ca3af"
+            stroke="#000"
             strokeWidth="2"
             strokeLinecap="round"
           >
@@ -39,44 +40,36 @@ export default function ArticlesTab({ onSelect }: Props) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search our help center..."
-            className="flex-1 text-sm bg-transparent outline-none text-gray-700 placeholder-gray-400"
+            className="flex-1 text-sm bg-transparent outline-none text-gray-700 placeholder-gray-800"
           />
         </div>
       </div>
 
       {/* Article list */}
-      <div className="flex-1 overflow-y-auto divide-y divide-gray-100">
+      <div className="flex-1 overflow-y-auto divide-y divide-gray-100 p-2">
         {filtered.map((article) => (
           <button
             key={article.id}
             onClick={() => onSelect(article)}
-            className="w-full flex items-center gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors text-left group"
+            className="w-full flex justify-between items-center gap-1 px-3 py-3.5 hover:bg-gray-100 rounded-lg p-2 transition-colors text-left group"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#e8f4fd] flex items-center justify-center flex-shrink-0">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#1a8fe3">
-                <path d="M14 2H6C4.9 2 4 2.9 4 4v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-              </svg>
-            </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-gray-800 group-hover:text-[#1a8fe3] transition-colors leading-snug">
-                {article.title}
-              </p>
-              <p className="text-xs text-gray-400 mt-0.5 line-clamp-2 leading-relaxed">
+              <div className="flex gap-1 text-primary">
+                <div>
+                  <BookOpen size={16} className="mt-1" fill="currentColor" />
+                </div>
+                <h4 className="text-[15px] font-semibold text-gray-800 transition-colors leading-snug">
+                  {article.title}
+                </h4>
+              </div>
+
+              <p className="text-[14px] text-gray-700 mt-0.5 line-clamp-2 leading-relaxed">
                 {article.snippet}
               </p>
             </div>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#9ca3af"
-              strokeWidth="2"
-              strokeLinecap="round"
-              className="flex-shrink-0"
-            >
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
+            <div className="text-gray-400">
+              <ChevronRight size={20} stroke="currentColor" />
+            </div>
           </button>
         ))}
 

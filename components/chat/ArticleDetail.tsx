@@ -1,16 +1,13 @@
 "use client";
-
-import { Article } from "./ShareTripChat";
-
+import { ChatArticle } from "@/app/types";
 interface Props {
-  article: Article;
+  article: ChatArticle;
   onBack: () => void;
 }
 
 export default function ArticleDetail({ article, onBack }: Props) {
   return (
     <div className="flex flex-col h-full">
-      {/* Back nav in body */}
       <div className="flex items-center gap-2 px-4 pt-4 pb-2 flex-shrink-0">
         <button
           onClick={onBack}
@@ -45,7 +42,6 @@ export default function ArticleDetail({ article, onBack }: Props) {
         </button>
       </div>
 
-      {/* Article content */}
       <div className="flex-1 overflow-y-auto px-5 py-3">
         <p className="text-sm text-gray-700 leading-relaxed">
           {article.content}

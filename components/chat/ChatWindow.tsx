@@ -20,47 +20,52 @@ export default function ChatWindow({ onClose, state }: Props) {
   );
 
   return (
-    <div className="w-[370px] h-[580px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden ">
+    <div className="w-[400px] h-[580px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden ">
       <div className="bg-primary px-4 pt-4 pb-0 flex-shrink-0">
         <div className="flex items-center justify-between mb-3">
-          <div className="w-auto mx-auto flex justify-center items-center bg-white/20 rounded-full p-1 gap-1">
+          <div className="w-auto mx-auto flex justify-center items-center bg-black/20 rounded-full p-1 gap-1">
             <button
               onClick={() => {
                 setActiveTab("messages");
                 setSelectedArticle(null);
               }}
-              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium transition-colors border ${
                 activeTab === "messages"
-                  ? "bg-white text-primary"
-                  : "text-white hover:bg-white/10"
+                  ? "bg-primary text-white shadow  border-white/10"
+                  : "text-white hover:bg-white/10 border-black/1"
               }`}
             >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-              </svg>
+              {activeTab === "messages" && (
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="mt-1"
+                >
+                  <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                </svg>
+              )}
               Messages
             </button>
             <button
               onClick={() => setActiveTab("articles")}
-              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium transition-colors border ${
                 activeTab === "articles"
-                  ? "bg-white text-primary"
-                  : "text-white hover:bg-white/10"
+                  ? "bg-primary text-white shadow border-white/10"
+                  : "text-white hover:bg-white/10 border-black/1"
               }`}
             >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M14 2H6C4.9 2 4 2.9 4 4v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-              </svg>
+              {activeTab === "articles" && (
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M14 2H6C4.9 2 4 2.9 4 4v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                </svg>
+              )}
               Articles
             </button>
           </div>
@@ -83,7 +88,7 @@ export default function ChatWindow({ onClose, state }: Props) {
         </div>
 
         {activeTab === "messages" && !selectedArticle && (
-          <div className="flex items-center gap-2 bg-white/10 rounded-xl px-3 py-2 mb-3">
+          <div className="flex items-center gap-2 bg-white/10 rounded-xl px-3 py-2 mb-4">
             <div className="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
               <svg
                 width="16"
@@ -119,7 +124,7 @@ export default function ChatWindow({ onClose, state }: Props) {
 
         {/* Article detail header */}
         {selectedArticle && (
-          <div className="text-center pb-3">
+          <div className="text-center pb-4">
             <p className="text-white font-semibold text-sm">
               {selectedArticle.title}
             </p>
@@ -131,8 +136,8 @@ export default function ChatWindow({ onClose, state }: Props) {
 
         {/* Articles tab header */}
         {activeTab === "articles" && !selectedArticle && (
-          <div className="text-center pb-3">
-            <p className="text-white font-bold text-base">
+          <div className="text-center pb-4">
+            <p className="text-white font-medium text-[14px]">
               How can we help you?
             </p>
           </div>
