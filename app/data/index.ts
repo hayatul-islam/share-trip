@@ -1,4 +1,19 @@
-import { Baby, Hotel, PersonStanding, Plane, User, Users } from "lucide-react";
+import {
+  Baby,
+  Car,
+  CreditCard,
+  Heart,
+  Hotel,
+  Palmtree,
+  PersonStanding,
+  Plane,
+  Receipt,
+  ShoppingBag,
+  Smartphone,
+  User,
+  Users,
+  Wifi,
+} from "lucide-react";
 import {
   Airport,
   CabinClass,
@@ -67,16 +82,20 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SERVICE_TABS: ServiceTab[] = [
-  { value: "flight", label: "Flight", icon: Plane },
+  {
+    value: "flight",
+    label: "Flight",
+    icon: Plane,
+  },
   { value: "hotel", label: "Hotel", icon: Hotel },
-  // { value: "shop", label: "Shop", icon: ShoppingBag },
-  // { value: "holiday", label: "Holiday", icon: Palmtree },
-  // { value: "visa", label: "Visa", icon: CreditCard },
-  // { value: "medical", label: "Medical", icon: Heart },
-  // { value: "cars", label: "Cars", icon: Car },
-  // { value: "esim", label: "eSIM", icon: Wifi },
-  // { value: "recharge", label: "Recharge", icon: Smartphone },
-  // { value: "pay-bill", label: "Pay Bill", icon: Receipt },
+  { value: "shop", label: "Shop", icon: ShoppingBag },
+  { value: "holiday", label: "Holiday", icon: Palmtree },
+  { value: "visa", label: "Visa", icon: CreditCard },
+  { value: "medical", label: "Medical", icon: Heart },
+  { value: "cars", label: "Cars", icon: Car },
+  { value: "esim", label: "eSIM", icon: Wifi },
+  { value: "recharge", label: "Recharge", icon: Smartphone },
+  { value: "pay-bill", label: "Pay Bill", icon: Receipt },
 ];
 
 export const AIRPORTS: Airport[] = [

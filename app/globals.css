@@ -31,7 +31,7 @@
 }
 
 .container {
-  @apply max-w-[1170px] mx-auto px-6;
+  @apply max-w-[1150px] mx-auto px-6;
 }
 
 @layer base {

@@ -26,7 +26,7 @@ export function Navbar() {
             return item.type === "dropdown" ? (
               <DropdownMenu key={item.name}>
                 <DropdownMenuTrigger asChild>
-                  <button className="group px-2 py-2 text-sm text-[#5a6573] font-[450] flex items-center gap-1 hover:text-primary data-[state=open]:text-primary">
+                  <button className="group px-2 py-2 text-sm text-[#5a6573] font-[450] flex items-end gap-1 hover:text-primary data-[state=open]:text-primary cursor-pointer">
                     {item.name}
                     <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
                   </button>
@@ -39,7 +39,9 @@ export function Navbar() {
                       asChild
                       className="hover:bg-primary/10 rounded-none px-3 py-1"
                     >
-                      <Link href={sub.link}>{sub.name}</Link>
+                      <Link href={sub.link} className="cursor-pointer">
+                        {sub.name}
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>

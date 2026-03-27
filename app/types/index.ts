@@ -1,4 +1,5 @@
 import { LucideIcon } from "lucide-react";
+import React from "react";
 
 export type ServiceType =
   | "flight"
@@ -36,7 +37,8 @@ export interface FlightLeg {
 export interface ServiceTab {
   value: ServiceType;
   label: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
+  svg?: React.ReactNode;
 }
 
 export interface TravellerCounts {

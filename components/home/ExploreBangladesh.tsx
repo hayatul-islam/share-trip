@@ -64,7 +64,7 @@ const DestinationCard: React.FC<(typeof DESTINATIONS)[0]> = ({
         <p className="text-white font-bold text-[16px] leading-tight drop-shadow">
           {name}
         </p>
-        <p className="text-white/80 text-[12px] mt-0.5">
+        <p className="text-white/90 text-[12px] mt-0.5">
           {hotels} Hotels Available
         </p>
       </div>

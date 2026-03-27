@@ -50,7 +50,7 @@ function TravellerPicker({
         ref={anchorRef}
         onClick={() => setOpen((o) => !o)}
         className="flex items-center gap-1.5 px-3 py-2.5 rounded bg-primary/10
-          text-primary text-sm font-medium hover:bg-blue-100 transition-colors select-none"
+          text-primary text-sm font-medium hover:bg-blue-100 transition-colors select-none cursor-pointer"
       >
         {label}
         <ChevronDown
@@ -123,7 +123,7 @@ function CabinClassSelector({
         ref={anchorRef}
         onClick={() => setOpen((o) => !o)}
         className="flex items-center gap-1.5 px-3 py-2.5 rounded bg-primary/10
-          text-primary text-sm font-medium hover:bg-blue-100 transition-colors select-none"
+          text-primary text-sm font-medium hover:bg-blue-100 transition-colors select-none cursor-pointer"
       >
         {value}
         <ChevronDown
