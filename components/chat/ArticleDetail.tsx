@@ -47,7 +47,7 @@ export default function ArticleDetail({ article, onBack }: Props) {
           {article.content}
         </p>
 
-        <div className="mt-8 pt-6 border-t border-gray-100 flex items-center gap-2 text-gray-400">
+        <div className="mt-8 pt-4 border-t border-gray-100 flex justify-center items-center gap-2 text-gray-600">
           <svg
             width="14"
             height="14"
