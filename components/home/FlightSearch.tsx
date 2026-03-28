@@ -114,7 +114,8 @@ const FlightSearch: React.FC = () => {
               <AirportSelector
                 airport={leg.origin}
                 onChange={(ap) => updateLeg(leg.id, { origin: ap })}
-                className={`${tripType === "round-trip" ? "!w-[280px]" : "w-full"}`}
+                // className={`${tripType === "round-trip" && "!w-[280px]"}`}
+                className={`!w-[280px]`}
               />
 
               <div className="flex items-center justify-center bg-white -mx-3 z-50 border-x-2 rounded-full h-10 w-10 border-gray-200">
@@ -132,7 +133,8 @@ const FlightSearch: React.FC = () => {
               <AirportSelector
                 airport={leg.destination}
                 onChange={(ap) => updateLeg(leg.id, { destination: ap })}
-                className={`${tripType === "round-trip" && "!w-[280px]"}`}
+                className={`!w-[280px]`}
+                // className={`${tripType === "round-trip" && "!w-[280px]"}`}
               />
             </div>
 

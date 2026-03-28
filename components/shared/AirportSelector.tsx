@@ -101,7 +101,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
               )}
             </div>
           ) : (
-            <div className="flex items-center gap-2.5 px-4 h-[56px] hover:bg-gray-50 transition-colors text-gray-800 rounded-lg border border-gray-200">
+            <div className="w-full flex items-center gap-2.5 px-4 h-[56px] hover:bg-gray-50 transition-colors text-gray-800 rounded-lg border border-gray-200">
               <h4 className="text-[16px] font-medium uppercase tracking-wider">
                 {airport.code}
               </h4>
