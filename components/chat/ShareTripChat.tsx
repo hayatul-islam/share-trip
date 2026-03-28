@@ -16,7 +16,7 @@ export default function ShareTripChat() {
   };
 
   return (
-    <div className="fixed bottom-3 right-3 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-3 right-3 z-50 flex flex-col items-end gap-3 z-[999]">
       {isOpen && <ChatWindow onClose={() => setIsOpen(false)} state={state} />}
       {firstTimeOpen && (
         <>
