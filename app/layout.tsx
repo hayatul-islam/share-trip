@@ -3,9 +3,8 @@ import Footer from "@/components/shared/Footer";
 import { Navbar } from "@/components/shared/Navbar";
 import type { Metadata } from "next";
 import { Murecho } from "next/font/google";
-import "swiper/css";
-import "swiper/css/pagination";
 import "./globals.css";
+import SwiperStyles from "./swiper-styles";
 
 const murecho = Murecho({
   variable: "--font-murecho",
@@ -30,6 +29,7 @@ export default function RootLayout({
       className={`${murecho.variable} h-full antialiased bg-background`}
     >
       <body className="min-h-full flex flex-col">
+        <SwiperStyles />
         <Navbar />
         {children}
         <ShareTripChat />
