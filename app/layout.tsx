@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { Murecho } from "next/font/google";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./globals.css";
 
 const murecho = Murecho({
