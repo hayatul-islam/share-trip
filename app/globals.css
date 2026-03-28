@@ -31,7 +31,7 @@
 }
 
 .container {
-  @apply max-w-[1150px] mx-auto px-6;
+  @apply max-w-[1140px] mx-auto px-[12px];
 }
 
 @layer base {
@@ -102,4 +102,12 @@ button {
 /* Hover overlay transition */
 .group:hover .translate-y-full {
   transform: translateY(0) !important;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }

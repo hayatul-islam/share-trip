@@ -73,7 +73,7 @@ const SOCIAL_LINKS = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-b from-background to-white pt-16">
+    <footer className="bg-gradient-to-b from-background to-white pt-8 sm:pt-10 md:pt-12 lg:pt-16">
       <div className="container space-y-8 px-4 sm:px-6 lg:px-8">
         {/* App Download Section */}
         <div>

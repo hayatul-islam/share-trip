@@ -17,7 +17,7 @@ export const FareSelector: React.FC<FareSelectorProps> = ({
   className,
 }) => {
   return (
-    <div className={cn("flex items-center gap-6", className)}>
+    <div className={cn("flex items-center gap-3 lg:gap-6", className)}>
       {FARE_OPTIONS.map((option) => {
         const isActive = value === option.value;
 
@@ -25,7 +25,7 @@ export const FareSelector: React.FC<FareSelectorProps> = ({
           <label
             key={option.value}
             className={cn(
-              "flex items-center gap-2 text-sm cursor-pointer",
+              "flex items-center gap-2 text-[12px] lg:text-sm cursor-pointer",
               option.disabled && "opacity-50 cursor-not-allowed",
             )}
           >
@@ -41,7 +41,7 @@ export const FareSelector: React.FC<FareSelectorProps> = ({
 
             <div
               className={cn(
-                "w-4 h-4 rounded-full border flex items-center justify-center",
+                "w-3 h-3 lg:w-4 lg:h-4 rounded-full border flex items-center justify-center",
                 isActive ? "border-primary" : "border-gray-300",
                 option.disabled && "border-gray-300",
               )}

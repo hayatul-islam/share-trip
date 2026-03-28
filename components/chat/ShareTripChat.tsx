@@ -16,9 +16,18 @@ export default function ShareTripChat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-3 right-3 z-50 flex flex-col items-end gap-3">
       {isOpen && <ChatWindow onClose={() => setIsOpen(false)} state={state} />}
-      {firstTimeOpen && <LauncherCard onOpen={handleOpen} />}
+      {firstTimeOpen && (
+        <>
+          <div className="hidden lg:block">
+            <LauncherCard onOpen={handleOpen} />
+          </div>
+          <div className="lg:hidden">
+            <ChatLauncher isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+          </div>
+        </>
+      )}
 
       {!firstTimeOpen && (
         <ChatLauncher isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />

@@ -7,7 +7,7 @@ import SectionHeader from "../shared/SectionHeader";
 
 const SearchTopAirlines: React.FC = () => {
   return (
-    <div className="container py-16">
+    <div className="container py-8 sm:py-10 md:py-12 lg:py-16">
       <SectionHeader
         title="Search Top Airlines"
         description="ShareTrip's user-friendly platform connects you to top airlines
@@ -16,7 +16,7 @@ const SearchTopAirlines: React.FC = () => {
         className="text-center max-w-2xl mx-auto"
       />
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
         {AIRLINES.map((airline) => (
           <AirlineItem
             key={airline.id}
@@ -35,7 +35,7 @@ const AirlineItem: React.FC<{ name: string; logo: string }> = ({
   name,
   logo,
 }) => (
-  <button className="flex items-center gap-3 w-full group hover:bg-white rounded-lg p-3 transition-all duration-500 hover:shadow-md">
+  <button className="bg-white flex items-center gap-3 w-full group hover:bg-white rounded-lg p-3 transition-all duration-500 hover:shadow-md">
     <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
       <Image
         src={logo}

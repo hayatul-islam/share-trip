@@ -19,20 +19,26 @@ const OurTourPackages: React.FC = () => {
     arrows: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-      { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1.5,
+        },
+      },
     ],
   };
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-16">
       <div className="container">
         <SectionHeader
           title="Our Tour Packages for You"
           description="Plan your dream gateway and choose from uncountable tour packages at ShareTrip. Book our holiday packages for the best deals on any international trip."
-          className="max-w-2xl"
+          className="max-w-2xl text-center lg:text-left"
         />
 
-        <div className="best-hotels-slider">
+        <div>
           <Slider ref={sliderRef} {...settings}>
             {HOTELS.slice(6).map((hotel) => (
               <HotelCard key={hotel.id} {...hotel} />

@@ -16,20 +16,20 @@ const ExploreBangladesh: React.FC = () => {
     arrows: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-      { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+      { breakpoint: 640, settings: { slidesToShow: 1.5, slidesToScroll: 1.5 } },
     ],
   };
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-16">
       <div className="container">
         <SectionHeader
           title="Explore Bangladesh"
           description="Prepare to experience Bangladesh's rich culture and explore the majestic beauties of Cox's Bazar, Sylhet, Bandarban, Sajek Valley, Rangamati etc Plan your trip now!"
-          className="max-w-2xl"
+          className="max-w-2xl text-center lg:text-left"
         />
 
-        <div className="explore-slider">
+        <div className="explore-slider -mx-2">
           <Slider {...settings}>
             {DESTINATIONS.map((dest) => (
               <DestinationCard key={dest.id} {...dest} />
@@ -49,7 +49,7 @@ const DestinationCard: React.FC<(typeof DESTINATIONS)[0]> = ({
   image,
 }) => (
   <div className="px-2">
-    <div className="relative overflow-hidden rounded-2xl h-80 cursor-pointer group shadow-sm hover:shadow-lg transition-shadow duration-300">
+    <div className="relative overflow-hidden rounded-2xl h-40 md:h-60 lg:h-80 cursor-pointer group shadow-sm hover:shadow-lg transition-shadow duration-300 ">
       <Image
         src={image}
         alt={name}

@@ -19,7 +19,7 @@ const ExclusiveOffers: React.FC = () => {
     arrows: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-      { breakpoint: 640, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1.5, slidesToScroll: 1.5 } },
     ],
   };
 
@@ -37,10 +37,13 @@ const ExclusiveOffers: React.FC = () => {
   };
 
   return (
-    <div className="container pt-15 pb-20">
-      <SectionHeader title="Exclusive Offers" className="!pb-6" />
+    <div className="container py-8 sm:py-10 md:py-12 lg:py-16 ">
+      <SectionHeader
+        title="Exclusive Offers"
+        className="!pb-6 text-center md:text-left"
+      />
 
-      <div className="space-y-20">
+      <div className="space-y-8 md:space-y-12 lg:space-y-20">
         <div className="-mx-2.5">
           <Slider {...offerSettings}>
             {OFFER_SLIDES.map((slide) => (
@@ -96,6 +99,7 @@ const ExclusiveOffers: React.FC = () => {
           />
         </div>
       </div>
+      <div className="pt-2 md:pt-4"></div>
     </div>
   );
 };

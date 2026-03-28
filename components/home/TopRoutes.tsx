@@ -11,7 +11,7 @@ const TopRoutes: React.FC = () => {
   const filteredRoutes = ROUTES.filter((r) => r.category === activeTab);
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-16">
       <div className="container">
         <SectionHeader
           title="Top Domestic & International Routes"
@@ -23,7 +23,7 @@ const TopRoutes: React.FC = () => {
           <div className="flex gap-2">
             <Button
               onClick={() => setActiveTab("domestic")}
-              className={`px-10 py-6 text-sm font-medium transition-all duration-200 ${
+              className={`px-10 py-5 md:py-6 text-sm font-medium transition-all duration-200 ${
                 activeTab === "domestic"
                   ? "bg-primary text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -33,7 +33,7 @@ const TopRoutes: React.FC = () => {
             </Button>
             <Button
               onClick={() => setActiveTab("international")}
-              className={`px-10 py-6 text-sm font-medium transition-all duration-200 ${
+              className={`px-10 py-5 md:py-6 text-sm font-medium transition-all duration-200 ${
                 activeTab === "international"
                   ? "bg-primary text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -44,7 +44,7 @@ const TopRoutes: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {filteredRoutes.map((route, idx) => (
             <RouteCard key={idx} {...route} />
           ))}

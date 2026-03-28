@@ -77,7 +77,7 @@ const MostPopularDestinations: React.FC = () => {
   };
 
   return (
-    <div className="bg-white py-16 overflow-hidden">
+    <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden">
       <div className=" container">
         <SectionHeader
           title="Most Popular Destinations"

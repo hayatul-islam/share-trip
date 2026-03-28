@@ -17,13 +17,22 @@ const BookingSearch: React.FC = () => {
   const ActiveComponent = SERVICE_COMPONENTS[activeService];
 
   return (
-    <div className="relative container -mt-[62px] z-50">
-      <div className="bg-white shadow-xs rounded-lg">
-        <ServiceTabs
-          activeService={activeService}
-          onServiceChange={setActiveService}
-        />
+    <div className="relative container -mt-[145px] md:-mt-[100px] lg:-mt-[62px] z-50">
+      <div className="bg-white shadow-xs rounded-lg relative">
+        <div className="bg-white shadow rounded-lg absolute w-[95%] top-1 left-[50%] translate-[-50%] lg:hidden">
+          <ServiceTabs
+            activeService={activeService}
+            onServiceChange={setActiveService}
+          />
+        </div>
+        <div className="hidden lg:block">
+          <ServiceTabs
+            activeService={activeService}
+            onServiceChange={setActiveService}
+          />
+        </div>
 
+        <div className="pb-7 lg:hidden"></div>
         {ActiveComponent ?? <ComingSoon service={activeService} />}
       </div>
     </div>
