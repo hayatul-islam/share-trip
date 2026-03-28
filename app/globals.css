@@ -43,6 +43,10 @@
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 /* SLIDER DOT STYLE */
 .slick-dots {
   position: static;
