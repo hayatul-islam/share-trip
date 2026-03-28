@@ -57,7 +57,7 @@ const FlightSearch: React.FC = () => {
 
   return (
     <div className="px-6 py-4 pb-6 space-y-5 ">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between pt-4">
         <Tabs
           value={tripType}
           onValueChange={(v) => setTripType(v as TripType)}
@@ -114,7 +114,7 @@ const FlightSearch: React.FC = () => {
               <AirportSelector
                 airport={leg.origin}
                 onChange={(ap) => updateLeg(leg.id, { origin: ap })}
-                className={`${tripType === "round-trip" && "!w-[280px]"}`}
+                className={`${tripType === "round-trip" ? "!w-[280px]" : "w-full"}`}
               />
 
               <div className="flex items-center justify-center bg-white -mx-3 z-50 border-x-2 rounded-full h-10 w-10 border-gray-200">
@@ -160,7 +160,7 @@ const FlightSearch: React.FC = () => {
             {tripType !== "multi-city" && (
               <Button
                 type="button"
-                className="bg-yellow/85 hover:bg-yellow text-white rounded-xl h-[62px] w-[62px]"
+                className="bg-yellow/85 hover:bg-yellow text-white rounded-xl h-[56px] w-[56px]"
               >
                 <Search className="!h-6 !w-6" />
               </Button>

@@ -76,7 +76,7 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
       <PopoverTrigger asChild>
         <div className={`${className} w-full flex-1 cursor-pointer`}>
           {open ? (
-            <div className="flex items-center gap-2 px-3 h-[62px] border border-primary rounded-lg bg-white w-full">
+            <div className="flex w-full items-center gap-2 px-3 h-[56px] border border-primary rounded-lg bg-white">
               <Input
                 ref={inputRef}
                 value={query ? query : defaultSelectAirport}
@@ -101,13 +101,13 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
               )}
             </div>
           ) : (
-            <div className="flex items-center gap-2.5 px-4 py-3 hover:bg-gray-50 transition-colors text-gray-800 rounded-lg border border-gray-200">
-              <h4 className="text-lg font-medium uppercase tracking-wider">
+            <div className="flex items-center gap-2.5 px-4 h-[56px] hover:bg-gray-50 transition-colors text-gray-800 rounded-lg border border-gray-200">
+              <h4 className="text-[16px] font-medium uppercase tracking-wider">
                 {airport.code}
               </h4>
               <div className="w-px border-l border-gray-300 h-7 shrink-0" />
               <div className="overflow-hidden">
-                <p className="text-[15px] font-medium text-gray-800 leading-snug truncate">
+                <p className="text-[14px] pb-0 font-medium text-gray-800 leading-none truncate">
                   {airport.city}
                 </p>
                 <p className="text-[11px] text-gray-700 mt-0.5 truncate min-w-0 max-w-full">
@@ -158,18 +158,18 @@ const AirportSelector: React.FC<AirportSelectorProps> = ({
                     >
                       {ap.code}
                     </span>
-                    <div className="w-px border-l border-gray-100 h-7 shrink-0" />
+                    <div className="w-px border-l border-gray-200 h-7 shrink-0" />
                     <div className="min-w-0">
                       <p
                         className={cn(
-                          "text-[13px] font-semibold leading-snug truncate",
+                          "text-[13px] font-semibold leading-none truncate",
                           isSelected ? "" : "text-gray-800",
                         )}
                       >
                         {ap.city}
                       </p>
 
-                      <p className="text-[11px] text-gray-700 truncate mt-0.5">
+                      <p className="text-[11px] text-gray-700 truncate">
                         {ap.country}, {ap.fullName}
                       </p>
                     </div>

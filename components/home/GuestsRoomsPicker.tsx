@@ -1,6 +1,6 @@
 import { INITIAL_ROOMS } from "@/app/data";
 import { RoomConfig } from "@/app/types";
-import { Trash2 } from "lucide-react";
+import { Minus, Plus, Trash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -121,10 +121,10 @@ const GuestsRoomsPicker: React.FC = () => {
     >
       <div className="px-5 pt-4 pb-3 flex items-start justify-between">
         <div>
-          <p className="text-base font-bold text-gray-900">
+          <p className="text-[16px] font-medium text-gray-900">
             Guest's &amp; Rooms
           </p>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <p className="text-xs text-gray-700 mt-0.5">
             Choose a person to join you on your journey
           </p>
         </div>
@@ -150,11 +150,11 @@ const GuestsRoomsPicker: React.FC = () => {
                   : "bg-gray-50 hover:bg-gray-100"
               }`}
             >
-              <span className="text-sm font-semibold text-gray-700">
+              <span className="text-sm font-medium text-gray-700">
                 Room {idx + 1}
               </span>
               <div className="flex items-center gap-3">
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-gray-700">
                   {room.adults} Adult{room.adults !== 1 ? "s" : ""},{" "}
                   {room.children} Child{room.children !== 1 ? "ren" : ""}
                 </span>
@@ -181,7 +181,7 @@ const GuestsRoomsPicker: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-800">Adults</p>
-                    <p className="text-xs text-gray-400">17+ years</p>
+                    <p className="text-xs text-gray-700">17+ years</p>
                   </div>
                   <Counter
                     value={room.adults}
@@ -196,7 +196,7 @@ const GuestsRoomsPicker: React.FC = () => {
                     <p className="text-sm font-medium text-gray-800">
                       Children
                     </p>
-                    <p className="text-xs text-gray-400">1 - 17 years</p>
+                    <p className="text-xs text-gray-700">1 - 17 years</p>
                   </div>
                   <Counter
                     value={room.children}
@@ -236,7 +236,7 @@ const GuestsRoomsPicker: React.FC = () => {
                               ),
                             )}
                           </select>
-                          <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">
+                          <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 text-xs">
                             ▾
                           </span>
                         </div>
@@ -255,7 +255,7 @@ const GuestsRoomsPicker: React.FC = () => {
           onClick={addRoom}
           className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary/10 hover:bg-primary text-primary hover:text-white font-medium text-sm transition-colors duration-150"
         >
-          <span className="text-xl leading-none">+</span>
+          <Plus size={20} strokeWidth={2.5} />
           Add another Room
         </button>
       </div>
@@ -267,14 +267,14 @@ const GuestsRoomsPicker: React.FC = () => {
       <button
         ref={triggerRef}
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center gap-2.5 px-4 py-3 hover:bg-gray-50 transition-colors text-gray-800 rounded-lg border border-gray-200"
+        className="w-full flex items-center gap-2.5 px-4 h-[56px] hover:bg-gray-50 transition-colors text-gray-800 rounded-lg border border-gray-200"
       >
         <h4 className="text-lg font-medium uppercase tracking-wider">
           {String(totalGuests).padStart(2, "0")}
         </h4>
         <div className="w-px border-l border-gray-300 h-7 shrink-0" />
         <div className="overflow-hidden">
-          <p className="text-[15px] font-medium text-gray-800 leading-snug truncate">
+          <p className="text-[15px] font-medium text-gray-800 leading-none truncate">
             Guests{" "}
             {totalChildren > 0 && (
               <span className="font-normal">({totalChildren} children)</span>
@@ -303,18 +303,20 @@ const Counter: React.FC<CounterProps> = ({
     <button
       onClick={onDecrement}
       disabled={value <= min}
-      className="w-8 h-8 rounded-full border-2 border-blue-400 text-primary flex items-center justify-center text-lg font-bold hover:bg-blue-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+      className="w-6 h-6 rounded-full border border-primary flex items-center justify-center
+          text-primary/100 hover:bg-primary/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
     >
-      −
+      <Minus size={13} strokeWidth={2.5} />
     </button>
     <span className="w-5 text-center text-sm font-bold text-gray-800">
       {value}
     </span>
     <button
       onClick={onIncrement}
-      className="w-8 h-8 rounded-full border-2 border-blue-400 text-primary flex items-center justify-center text-lg font-bold hover:bg-blue-50 transition-colors"
+      className="w-6 h-6 rounded-full border border-primary bg-white flex items-center justify-center
+          text-primary hover:bg-primary/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
     >
-      +
+      <Plus size={13} strokeWidth={2.5} />
     </button>
   </div>
 );

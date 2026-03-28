@@ -33,7 +33,7 @@ const HotelSearch: React.FC = () => {
           </div>
           <Button
             type="button"
-            className="bg-yellow hover:bg-yellow/80 text-white rounded-xl h-[62px] w-[62px]"
+            className="bg-yellow hover:bg-yellow/80 text-white rounded-xl h-[56px] w-[56px]"
           >
             <Search className="!h-6 !w-6" />
           </Button>
