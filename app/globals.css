@@ -64,11 +64,11 @@
   justify-content: center;
 }
 .slick-dots li button {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border-radius: 9999px;
-  background: #d1d5db;
+  width: 6px !important;
+  height: 6px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  background: rgb(172, 208, 249);
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -81,7 +81,7 @@
 .slick-dots li.slick-active button {
   background: var(--primary) !important;
   box-shadow:
-    0 0 0 2px #fff,
+    0 0 0 3px #fff,
     0 0 0 4px var(--primary) !important;
   width: 8px !important;
   height: 8px !important;
