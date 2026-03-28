@@ -3,6 +3,8 @@ import Footer from "@/components/shared/Footer";
 import { Navbar } from "@/components/shared/Navbar";
 import type { Metadata } from "next";
 import { Murecho } from "next/font/google";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./globals.css";
 
 const murecho = Murecho({
