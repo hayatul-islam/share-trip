@@ -15,7 +15,7 @@ const HotelCard: React.FC<HotelCardProps> = ({
 }) => (
   <div className="px-2">
     <div className="cursor-pointer group">
-      <div className="relative overflow-hidden rounded-2xl h-64 shadow-sm">
+      <div className="relative overflow-hidden rounded-2xl lg:h-64 shadow-sm">
         <Image
           src={image}
           alt={name}

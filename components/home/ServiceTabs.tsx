@@ -79,7 +79,7 @@ const ServiceTabs: React.FC<ServiceTabsProps> = ({
                   "px-2 md:px-4 py-3 md:py-5 font-medium",
                   "whitespace-nowrap transition-colors border-b-2 shrink-0 cursor-pointer",
                   isActive
-                    ? "border-yellow text-orange-500"
+                    ? "border-yellow"
                     : "border-transparent text-gray-500 hover:text-gray-700",
                 )}
               >

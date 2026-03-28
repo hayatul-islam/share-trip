@@ -36,7 +36,7 @@ const HotelSearch: React.FC = () => {
             className="bg-yellow hover:bg-yellow/80 text-white rounded-xl h-[42px] lg:h-[56px] lg:w-[56px]"
           >
             <Search className="hidden lg:block !h-6 !w-6" />
-            <span>Search Hotel</span>
+            <span className="lg:hidden">Search Hotel</span>
           </Button>
         </div>
       </div>

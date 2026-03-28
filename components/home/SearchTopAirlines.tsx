@@ -35,7 +35,7 @@ const AirlineItem: React.FC<{ name: string; logo: string }> = ({
   name,
   logo,
 }) => (
-  <button className="bg-white flex items-center gap-3 w-full group hover:bg-white rounded-lg p-3 transition-all duration-500 hover:shadow-md">
+  <button className="bg-white md:bg-transparent flex items-center gap-3 w-full group hover:bg-white rounded-lg p-3 transition-all duration-500 hover:shadow-md">
     <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
       <Image
         src={logo}

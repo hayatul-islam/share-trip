@@ -57,7 +57,7 @@ const ExclusiveOffers: React.FC = () => {
           >
             {AD_SLIDES.map((slide) => (
               <SwiperSlide key={slide.id}>
-                <div className="relative h-32">
+                <div className="relative h-full lg:h-32">
                   <Image
                     src={slide.image}
                     alt="Advertisement"
@@ -108,7 +108,7 @@ const OfferCard: React.FC<(typeof OFFER_SLIDES)[0]> = ({
   title,
   subtitle,
 }) => (
-  <div className="relative overflow-hidden rounded-xl h-44 group cursor-pointer shadow-sm">
+  <div className="relative overflow-hidden rounded-xl h-26 md:h-32 lg:h-44 group cursor-pointer shadow-sm">
     <Image
       src={image}
       alt={title}
