@@ -130,7 +130,7 @@ export function Navbar() {
                     <Link
                       key={sub.name}
                       href={sub.link}
-                      onClick={() => setMenuOpen(false)}
+                      // onClick={() => setMenuOpen(false)}
                       className="flex items-center gap-2 px-2.5 py-1 text-[14px] text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg"
                     >
                       {sub.name}
@@ -142,7 +142,7 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.link}
-                onClick={() => setMenuOpen(false)}
+                // onClick={() => setMenuOpen(false)}
                 className="block px-3 py-1.5 text-[15px] font-[400] text-gray-800 hover:bg-gray-50 rounded-lg"
               >
                 {item.name}

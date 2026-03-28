@@ -303,11 +303,7 @@ const FlightSearch: React.FC = () => {
                 {tripType === "round-trip" ? (
                   <div className="grid grid-cols-2 gap-2">
                     <div className="overflow-hidden">
-                      <DateRangePicker
-                        range={range}
-                        onChange={setRange}
-                        showOnlyStart
-                      />
+                      <DateRangePicker range={range} onChange={setRange} />
                     </div>
                     <div className=" overflow-hidden">
                       <DateRangePicker range={range} onChange={setRange} />
