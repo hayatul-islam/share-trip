@@ -3,16 +3,8 @@ import { CABIN_CLASSES, TRAVELLER_CONFIG } from "@/app/data";
 import { CabinClass, TravellerCounts } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Minus, Plus } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
-
-interface PortalDropdownProps {
-  anchorRef: React.RefObject<HTMLElement | null>;
-  open: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-  width?: number;
-}
+import { useRef, useState } from "react";
+import { PortalDropdown } from "../shared/PortalDropdown";
 
 export default function TravellerSelectors() {
   const [counts, setCounts] = useState<TravellerCounts>({
@@ -203,68 +195,5 @@ function Stepper({
         <Plus size={13} strokeWidth={2.5} />
       </button>
     </div>
-  );
-}
-
-function PortalDropdown({
-  anchorRef,
-  open,
-  onClose,
-  children,
-  width,
-}: PortalDropdownProps) {
-  const [coords, setCoords] = useState({ top: 0, left: 0, w: 0 });
-
-  const updateCoords = useCallback(() => {
-    if (!anchorRef.current) return;
-    const rect = anchorRef.current.getBoundingClientRect();
-    setCoords({
-      top: rect.bottom + window.scrollY + 4,
-      left: rect.left + window.scrollX,
-      w: rect.width,
-    });
-  }, [anchorRef]);
-
-  useEffect(() => {
-    if (open) {
-      updateCoords();
-      window.addEventListener("scroll", updateCoords, true);
-      window.addEventListener("resize", updateCoords);
-    }
-    return () => {
-      window.removeEventListener("scroll", updateCoords, true);
-      window.removeEventListener("resize", updateCoords);
-    };
-  }, [open, updateCoords]);
-
-  useEffect(() => {
-    if (!open) return;
-    const handler = (e: MouseEvent) => {
-      if (anchorRef.current && anchorRef.current.contains(e.target as Node))
-        return;
-      const portal = document.getElementById("portal-dropdown-active");
-      if (portal && portal.contains(e.target as Node)) return;
-      onClose();
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [open, onClose, anchorRef]);
-
-  if (!open || typeof document === "undefined") return null;
-
-  return createPortal(
-    <div
-      id="portal-dropdown-active"
-      style={{
-        position: "absolute",
-        top: coords.top,
-        left: coords.left,
-        width: width ?? coords.w,
-        zIndex: 9999,
-      }}
-    >
-      {children}
-    </div>,
-    document.body,
   );
 }

@@ -35,14 +35,7 @@ export function Navbar() {
                 <DropdownMenuContent
                   align="end"
                   sideOffset={8}
-                  className="
-                    bg-white ring-0 shadow-sm p-0 rounded min-w-[180px]
-                    data-[state=open]:animate-in data-[state=closed]:animate-out
-                    data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0
-                    data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95
-                    data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2
-                    duration-300
-                  "
+                  className="bg-white shadow-sm p-0 rounded min-w-[180px] ring-0"
                 >
                   {item.menu?.map((sub) => (
                     <DropdownMenuItem
