@@ -21,7 +21,7 @@ export default function ChatWindow({ onClose, state }: Props) {
   );
 
   return (
-    <div className="w-[400px] h-[580px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden ">
+    <div className="w-[350px] sm:w-[400px] h-[500px] md:h-[580px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden ">
       <div
         className={`bg-primary px-4 pt-4 pb-0 flex-shrink-0 ${(activeTab === "messages" || selectedArticle) && "rounded-2xl"}`}
       >
