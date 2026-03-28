@@ -2,8 +2,6 @@
 import { DESTINATIONS } from "@/app/data";
 import Image from "next/image";
 import React from "react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionHeader from "../shared/SectionHeader";
