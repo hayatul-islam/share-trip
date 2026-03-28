@@ -2,7 +2,6 @@
 import { ServiceType } from "@/app/types";
 import { Clock } from "lucide-react";
 import React, { useState } from "react";
-import { Card } from "../ui/card";
 import FlightSearch from "./FlightSearch";
 import HotelSearch from "./HotelSearch";
 import ServiceTabs from "./ServiceTabs";
@@ -19,14 +18,14 @@ const BookingSearch: React.FC = () => {
 
   return (
     <div className="relative container -mt-[62px] z-50">
-      <Card className="bg-white p-0 shadow-none right-0 border-none">
+      <div className="bg-white shadow-xs rounded-lg">
         <ServiceTabs
           activeService={activeService}
           onServiceChange={setActiveService}
         />
 
         {ActiveComponent ?? <ComingSoon service={activeService} />}
-      </Card>
+      </div>
     </div>
   );
 };
