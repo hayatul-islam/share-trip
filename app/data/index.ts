@@ -57,8 +57,9 @@ export const NAV_LINKS = [
     link: "#",
     type: "dropdown",
     menu: [
-      { name: "Option 1", link: "#" },
-      { name: "Option 2", link: "#" },
+      { name: "Visa Application", link: "#" },
+      { name: "Visa Guide", link: "#" },
+      { name: "Transit Visa", link: "#" },
     ],
   },
   {
@@ -66,8 +67,9 @@ export const NAV_LINKS = [
     link: "#",
     type: "dropdown",
     menu: [
-      { name: "Option 1", link: "#" },
-      { name: "Option 2", link: "#" },
+      { name: "Bus", link: "#" },
+      { name: "Train", link: "#" },
+      { name: "Ferries", link: "#" },
     ],
   },
   {
@@ -75,8 +77,10 @@ export const NAV_LINKS = [
     link: "#",
     type: "dropdown",
     menu: [
-      { name: "Option 1", link: "#" },
-      { name: "Option 2", link: "#" },
+      { name: "Promotions", link: "#" },
+      { name: "About", link: "#" },
+      { name: "SkyTrip", link: "#" },
+      { name: "Stellar Card", link: "#" },
     ],
   },
 ] as const;

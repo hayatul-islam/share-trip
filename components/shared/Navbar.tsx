@@ -26,22 +26,31 @@ export function Navbar() {
             return item.type === "dropdown" ? (
               <DropdownMenu key={item.name}>
                 <DropdownMenuTrigger asChild>
-                  <button className="group px-2 py-2 text-sm text-[#5a6573] font-[450] flex items-end gap-1 hover:text-primary data-[state=open]:text-primary cursor-pointer">
+                  <button className="group px-2 py-2 text-sm text-[#5a6573] font-[450] flex items-end gap-1 hover:text-primary data-[state=open]:text-primary cursor-pointer outline-none">
                     {item.name}
-                    <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]:rotate-180" />
+                    <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                   </button>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent className="bg-white p-0">
+                <DropdownMenuContent
+                  align="end"
+                  sideOffset={8}
+                  className="
+                    bg-white ring-0 shadow-sm p-0 rounded min-w-[180px]
+                    data-[state=open]:animate-in data-[state=closed]:animate-out
+                    data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0
+                    data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95
+                    data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2
+                    duration-300
+                  "
+                >
                   {item.menu?.map((sub) => (
                     <DropdownMenuItem
                       key={sub.name}
                       asChild
-                      className="hover:bg-primary/10 rounded-none px-3 py-1"
+                      className="rounded-none px-4 py-1.5 text-[14px] text-gray-900 hover:bg-primary/8 cursor-pointer transform duration-300"
                     >
-                      <Link href={sub.link} className="cursor-pointer">
-                        {sub.name}
-                      </Link>
+                      <Link href={sub.link}>{sub.name}</Link>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
