@@ -1,5 +1,5 @@
-import { INITIAL_ROOMS } from "@/app/data";
-import { RoomConfig } from "@/app/types";
+import { INITIAL_ROOMS } from "@/data";
+import { RoomConfig } from "@/types";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";

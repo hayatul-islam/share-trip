@@ -1,7 +1,7 @@
 "use client";
 
-import { CHAT_ARTICLES } from "@/app/data";
-import { ChatArticle } from "@/app/types";
+import { CHAT_ARTICLES } from "@/data";
+import { ChatArticle } from "@/types";
 import { BookOpen, ChevronRight } from "lucide-react";
 import { useState } from "react";
 

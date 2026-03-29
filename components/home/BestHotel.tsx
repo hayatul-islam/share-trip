@@ -1,5 +1,5 @@
 "use client";
-import { HOTELS } from "@/app/data";
+import { HOTELS } from "@/data";
 import React from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";

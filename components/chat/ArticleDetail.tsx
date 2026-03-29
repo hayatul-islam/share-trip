@@ -1,5 +1,5 @@
 "use client";
-import { ChatArticle } from "@/app/types";
+import { ChatArticle } from "@/types";
 interface Props {
   article: ChatArticle;
   onBack: () => void;

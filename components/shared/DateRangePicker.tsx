@@ -1,13 +1,13 @@
 "use client";
-import { DAYS, MONTHS } from "@/app/data";
-import { CalendarDate, DateRange } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { DAYS, MONTHS } from "@/data";
 import { cn } from "@/lib/utils";
+import { CalendarDate, DateRange } from "@/types";
 import { format } from "date-fns";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";

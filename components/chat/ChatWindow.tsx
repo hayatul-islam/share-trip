@@ -1,6 +1,6 @@
 "use client";
 
-import { ChatArticle } from "@/app/types";
+import { ChatArticle } from "@/types";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import ArticleDetail from "./ArticleDetail";

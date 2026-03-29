@@ -1,5 +1,5 @@
 "use client";
-import { POPULAR_DESTINATIONS } from "@/app/data";
+import { POPULAR_DESTINATIONS } from "@/data";
 import Image from "next/image";
 import React, { useCallback, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";

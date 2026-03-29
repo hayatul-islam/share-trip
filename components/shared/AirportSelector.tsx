@@ -1,13 +1,13 @@
 "use client";
-import { AIRPORTS } from "@/app/data";
-import { Airport } from "@/app/types";
 import { Input } from "@/components/ui/input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { AIRPORTS } from "@/data";
 import { cn } from "@/lib/utils";
+import { Airport } from "@/types";
 import { X } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 

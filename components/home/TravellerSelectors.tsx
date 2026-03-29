@@ -1,7 +1,7 @@
 "use client";
-import { CABIN_CLASSES, TRAVELLER_CONFIG } from "@/app/data";
-import { CabinClass, TravellerCounts } from "@/app/types";
 import { Button } from "@/components/ui/button";
+import { CABIN_CLASSES, TRAVELLER_CONFIG } from "@/data";
+import { CabinClass, TravellerCounts } from "@/types";
 import { ChevronDown, Minus, Plus } from "lucide-react";
 import { useRef, useState } from "react";
 import { PortalDropdown } from "../shared/PortalDropdown";

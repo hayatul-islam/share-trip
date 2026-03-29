@@ -1,5 +1,5 @@
 "use client";
-import { DESTINATIONS } from "@/app/data";
+import { DESTINATIONS } from "@/data";
 import Image from "next/image";
 import React from "react";
 import { Autoplay, Pagination } from "swiper/modules";

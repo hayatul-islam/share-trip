@@ -1,5 +1,5 @@
 "use client";
-import { ACCREDITATIONS, PAYMENT_METHODS } from "@/app/data";
+import { ACCREDITATIONS, PAYMENT_METHODS } from "@/data";
 
 import { MapPin } from "lucide-react";
 import Image from "next/image";

@@ -1,5 +1,5 @@
 "use client";
-import { ServiceType } from "@/app/types";
+import { ServiceType } from "@/types";
 import { Clock } from "lucide-react";
 import React, { useState } from "react";
 import FlightSearch from "./FlightSearch";

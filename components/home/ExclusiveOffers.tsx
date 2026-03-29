@@ -1,5 +1,5 @@
 "use client";
-import { AD_SLIDES, OFFER_SLIDES } from "@/app/data";
+import { AD_SLIDES, OFFER_SLIDES } from "@/data";
 import Image from "next/image";
 import React, { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";

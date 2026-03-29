@@ -1,6 +1,6 @@
 "use client";
-import { INITIAL_LEGS } from "@/app/data";
-import type { Airport, DateRange } from "@/app/types";
+import { INITIAL_LEGS } from "@/data";
+import type { Airport, DateRange } from "@/types";
 import { Search } from "lucide-react";
 import React, { useState } from "react";
 import AirportSelector from "../shared/AirportSelector";

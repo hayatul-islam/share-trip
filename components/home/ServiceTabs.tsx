@@ -1,7 +1,7 @@
 "use client";
-import { SERVICE_TABS } from "@/app/data";
-import { ServiceType } from "@/app/types";
+import { SERVICE_TABS } from "@/data";
 import { cn } from "@/lib/utils";
+import { ServiceType } from "@/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import { ServiceIcon } from "./ServiceIcon";

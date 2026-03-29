@@ -1,11 +1,11 @@
 "use client";
-import { NAV_LINKS } from "@/app/data";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { NAV_LINKS } from "@/data";
 import { ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";

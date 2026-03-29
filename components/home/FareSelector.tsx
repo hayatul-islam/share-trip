@@ -1,8 +1,8 @@
 "use client";
 
-import { FARE_OPTIONS } from "@/app/data";
-import { FareType } from "@/app/types";
+import { FARE_OPTIONS } from "@/data";
 import { cn } from "@/lib/utils";
+import { FareType } from "@/types";
 import * as React from "react";
 
 interface FareSelectorProps {

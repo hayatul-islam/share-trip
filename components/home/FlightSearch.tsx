@@ -1,8 +1,8 @@
 "use client";
-import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/app/data";
-import type { DateRange, FareType, FlightLeg, TripType } from "@/app/types";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AIRPORTS, INITIAL_LEGS, TRIP_TABS } from "@/data";
+import type { DateRange, FareType, FlightLeg, TripType } from "@/types";
 import { ArrowLeftRight, ArrowUpDown, Plus, Search, X } from "lucide-react";
 import React, { useState } from "react";
 import AirportSelector from "../shared/AirportSelector";

@@ -1,5 +1,5 @@
 "use client";
-import { AIRLINES } from "@/app/data";
+import { AIRLINES } from "@/data";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";

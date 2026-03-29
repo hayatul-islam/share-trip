@@ -1,6 +1,6 @@
 "use client";
-import { ROUTES } from "@/app/data";
-import { RouteCategory } from "@/app/types";
+import { ROUTES } from "@/data";
+import { RouteCategory } from "@/types";
 import React, { useState } from "react";
 import SectionHeader from "../shared/SectionHeader";
 import { Button } from "../ui/button";
