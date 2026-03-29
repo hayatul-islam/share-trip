@@ -34,7 +34,7 @@ const ExploreBangladesh: React.FC = () => {
               1024: { slidesPerView: 3, spaceBetween: 16 },
               1280: { slidesPerView: 4, spaceBetween: 16 },
             }}
-            className="!pb-10"
+            className="!pb-12 md:!pb-16"
           >
             {DESTINATIONS.map((dest) => (
               <SwiperSlide key={dest.id}>

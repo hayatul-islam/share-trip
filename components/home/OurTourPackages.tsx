@@ -28,7 +28,7 @@ const OurTourPackages: React.FC = () => {
             640: { slidesPerView: 3, spaceBetween: 16 },
             1024: { slidesPerView: 4, spaceBetween: 16 },
           }}
-          className="!pb-10"
+          className="!pb-12 md:!pb-16"
         >
           {HOTELS.slice(6).map((hotel) => (
             <SwiperSlide key={hotel.id}>

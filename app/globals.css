@@ -111,3 +111,26 @@ button {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+/* Base dot style */
+.swiper-pagination-bullet {
+  width: 7px !important;
+  height: 7px !important;
+  background: rgb(81, 147, 222) !important;
+  opacity: 1;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Active dot — concentric circle effect */
+.swiper-pagination-bullet-active {
+  width: 8px !important;
+  height: 8px !important;
+  background: var(--primary) !important;
+  border: 2px solid var(--primary) !important;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 5px var(--primary) !important;
+  border-radius: 50%;
+}

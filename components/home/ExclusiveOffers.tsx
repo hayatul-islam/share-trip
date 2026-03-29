@@ -31,7 +31,7 @@ const ExclusiveOffers: React.FC = () => {
             640: { slidesPerView: 3, spaceBetween: 20 },
             1024: { slidesPerView: 3, spaceBetween: 20 },
           }}
-          className="!pb-10"
+          className="!pb-12 md:!pb-16"
         >
           {OFFER_SLIDES.map((slide) => (
             <SwiperSlide key={slide.id}>

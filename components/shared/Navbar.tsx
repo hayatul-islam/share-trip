@@ -36,7 +36,7 @@ export function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-[12px]">
+        <div className="hidden lg:flex items-center gap-[12px]">
           {NAV_LINKS.map((item) =>
             item.type === "dropdown" ? (
               <DropdownMenu key={item.name}>
@@ -89,14 +89,14 @@ export function Navbar() {
 
       {/* Backdrop */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-screen h-screen z-[998] bg-black/40 transition-opacity duration-300
+        className={`lg:hidden fixed top-0 left-0 w-screen h-screen z-[998] bg-black/40 transition-opacity duration-300
           ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={() => setMenuOpen(false)}
       />
 
       {/* Slide-in Panel */}
       <div
-        className={`md:hidden fixed top-0 left-0 z-[999] h-screen w-[80%] !bg-white flex flex-col
+        className={`lg:hidden fixed top-0 left-0 z-[999] h-screen w-[80%] !bg-white flex flex-col
           shadow-2xl transition-transform duration-300 ease-in-out
           ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
       >

@@ -86,7 +86,7 @@ const MostPopularDestinations: React.FC = () => {
             }}
             onActiveIndexChange={handleChange}
             slideToClickedSlide={true}
-            className="!pb-10"
+            className="!pb-10 md:!pb-12"
           >
             {SLIDES.map((dest, idx) => {
               const realIdx = idx % TOTAL;
