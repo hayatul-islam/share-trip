@@ -18,7 +18,7 @@
   --foreground: #111827;
   --primary: #1882ff;
   --primary-foreground: #f5f7fa;
-  --yellow: #d66f00;
+  --yellow: rgb(242, 125, 0);
   --radius: 0.625rem;
 }
 

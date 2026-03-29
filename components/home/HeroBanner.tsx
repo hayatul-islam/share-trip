@@ -16,7 +16,7 @@ export function HeroBanner() {
         <h1 className="text-[24px] md:text-[26px] md:text-[40px] text-white ">
           Welcome to <span className="font-bold">ShareTrip!</span>
         </h1>
-        <p className="mt-0.5 md:mt-2 lg:mt-3 text-[14px] md:text-base text-white font-medium">
+        <p className="mt-0.5 md:mt-1.5 text-[14px] md:text-base text-white font-medium">
           Find Flights, Hotels, Visa &amp; Holidays
         </p>
       </div>
